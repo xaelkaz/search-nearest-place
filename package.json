@@ -9,6 +9,7 @@
     "boostrap": "^2.0.0",
     "google-map-react": "^1.1.7",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
