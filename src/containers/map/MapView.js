@@ -1,8 +1,9 @@
 import GoogleMapReact from "google-map-react";
 import React, { useContext } from "react";
-import MapPoint from "../../components/map/MapPoint";
+import MapPoint from "../../components/map/points/MapPoint";
 import { store } from "../../hooks/mapProvider";
 import ListOverMap from "../../components/map/list-over-map/list-over-map";
+import { fitBounds } from 'google-map-react/utils';
 
 const MapView = () => {
 
@@ -99,25 +100,69 @@ const MapView = () => {
         const query = e.target.value;
         //this.props.update(query);
     };
+    // Re-center map when resizing the window
+    const bindResizeListener = (map, maps, bounds) => {
+        maps.event.addDomListenerOnce(map, 'idle', () => {
+            maps.event.addDomListener(window, 'resize', () => {
+                map.fitBounds(bounds);
+            });
+        });
+    };
+
+
+    // Return map bounds based on list of places
+    const getMapBounds = (map, maps, places) => {
+        const bounds = new maps.LatLngBounds();
+
+        places.forEach((place) => {
+            bounds.extend(new maps.LatLng(
+                place.latitude,
+                place.longitude
+            ));
+        });
+        return bounds;
+    };
+
+    // Fit map to its bounds after the api is loaded
+    const apiIsLoaded = (map, maps, places) => {
+        // Get bounds by our places
+        const bounds = getMapBounds(map, maps, places);
+        // Fit map to bounds
+        map.fitBounds(bounds);
+        // Bind the resize listener
+        bindResizeListener(map, maps, bounds);
+    };
+
     return (
         <div style={ { height: '100vh', width: '100%' } }>
             <GoogleMapReact
                 bootstrapURLKeys={ { key: 'AIzaSyB5rtdt0SYpcBBr0czE96PvkEzt8yw-XG0' } }
-                defaultCenter={ [ parseFloat(result[0].latitude), parseFloat(result[0].longitude) ] }
+                defaultCenter={ [ parseFloat(result[10].latitude), parseFloat(result[10].longitude) ] }
                 defaultZoom={ defaultProps.zoom }
                 layerTypes={ [] }
                 options={ { styles: modalMapStyles } }
-
-            >
+                onGoogleApiLoaded={ ({ map, maps }) => apiIsLoaded(map, maps, result) }>
                 { result.map((point => {
-                    return <MapPoint
-                        key={ point.id }
-                        lat={ parseFloat(point.latitude) }
-                        lng={ parseFloat(point.longitude) }
-                        text={ "Point 1" }
-                        name="My Marker"
-                        color="red"
-                    />
+                    if (point.motive_text == null) {
+                        return <MapPoint
+                            key={ point.id }
+                            lat={ parseFloat(point.latitude) }
+                            lng={ parseFloat(point.longitude) }
+                            text={ "Point 1" }
+                            name="My Marker"
+                            color="red"
+                        />
+                    } else {
+                        return <MapPoint
+                            key={ point.id }
+                            lat={ parseFloat(point.latitude) }
+                            lng={ parseFloat(point.longitude) }
+                            text={ "Point 1" }
+                            name="My Marker"
+                            color="green"
+                        />
+                    }
+
                 }))
 
                 }
@@ -125,13 +170,16 @@ const MapView = () => {
             <ListOverMap>
                 <div>
                     <div className="input-group input-group-sm mb-3">
-                        <input type="text" className="form-control"
-                               style={ {
-                                   width: 'calc(100% - 2rem)',
-                                   margin: '1rem 1rem 0rem 1rem',
-                               } }
-                               aria-label="Small"
-                               aria-describedby="inputGroup-sizing-sm"/>
+                        <input
+                            placeholder="Buscar por cliente"
+                            type="text"
+                            className="form-control"
+                            style={ {
+                                width: 'calc(100% - 2rem)',
+                                margin: '1rem 1rem 0rem 1rem',
+                            } }
+                            aria-label="Small"
+                            aria-describedby="inputGroup-sizing-sm"/>
                     </div>
                     <div>
                         {
