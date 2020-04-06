@@ -7,9 +7,12 @@ import { fitBounds } from 'google-map-react/utils';
 
 const MapView = () => {
 
-    const { state, dispatch, result, updateQuery } = useContext(store);
-
-    const [ isApiLoaded, setApiLoaded ] = useState(false);
+    const {
+        state, dispatch,
+        result, filterResult,
+        updateQuery, apiHasLoaded,
+        mapApiLoaded, mapInstance, mapApi
+    } = useContext(store);
 
     const defaultProps = {
         center: {
@@ -107,7 +110,6 @@ const MapView = () => {
         });
     };
 
-
     // Return map bounds based on list of places
     const getMapBounds = (map, maps, places) => {
         const bounds = new maps.LatLngBounds();
@@ -131,16 +133,17 @@ const MapView = () => {
         bindResizeListener(map, maps, bounds);
     };
 
+    const clientData = filterResult.length > 0 ? filterResult : result;
     return (
         <div style={ { height: '100vh', width: '100%' } }>
             <GoogleMapReact
                 bootstrapURLKeys={ { key: 'AIzaSyB5rtdt0SYpcBBr0czE96PvkEzt8yw-XG0' } }
-                defaultCenter={ isApiLoaded ? getCenter(result) : [ parseFloat(result[0].latitude), parseFloat(result[0].longitude) ] }
+                defaultCenter={ mapApiLoaded ? apiIsLoaded(mapInstance, mapApi, clientData) : [ parseFloat(clientData[0].latitude), parseFloat(clientData[0].longitude) ] }
                 defaultZoom={ defaultProps.zoom }
                 layerTypes={ [] }
                 options={ { styles: modalMapStyles } }
-                onGoogleApiLoaded={ ({ map, maps }) => apiIsLoaded(map, maps, result) }>
-                { result.map((point => {
+                onGoogleApiLoaded={ ({ map, maps }) => apiHasLoaded(map, maps) }>
+                { clientData.map((point => {
                     if (point.motive_text == null) {
                         return <MapPoint
                             key={ point.id }
@@ -182,7 +185,7 @@ const MapView = () => {
                     </div>
                     <div>
                         {
-                            (result.length > 0 ? result : result).map(area => (
+                            (filterResult.length > 0 ? filterResult : result).map(area => (
                                 <div className="list-item"
                                      key={ `item-${ area.id }` }>{ area.client_name } - { area.client_db_ref }</div>
                             ))

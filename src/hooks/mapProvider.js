@@ -8,6 +8,18 @@ const { Provider, Consumer } = store;
 const MapProvider = (props) => {
 
         const [ result, setResult ] = useState([]);
+        const [ filterResult, setFilterResult ] = useState([]);
+
+        const [ mapApiLoaded, setMapApiLoaded ] = useState(false);
+        const [ mapInstance, setMapInstance ] = useState(null);
+        const [ mapApi, setMapApi ] = useState(null);
+
+
+        const apiHasLoaded = (map, maps) => {
+            setMapInstance(map);
+            setMapApi(maps);
+            setMapApiLoaded(true);
+        };
 
         async function fetchData(url) {
             return await JSON.parse(JSON.stringify(url));
@@ -33,11 +45,21 @@ const MapProvider = (props) => {
             event.preventDefault();
             const query = event.target.value;
             const filter = result.filter(area => area.client_name.match(new RegExp(`.*${ query }.*`, 'gi')));
-            setResult(filter)
+            setFilterResult(filter)
         };
 
         return (
-            <Provider value={ { state, dispatch, result, updateQuery } }>{ props.children }</Provider>
+            <Provider value={ {
+                state,
+                dispatch,
+                result,
+                filterResult,
+                updateQuery,
+                apiHasLoaded,
+                mapApiLoaded,
+                mapInstance,
+                mapApi
+            } }>{ props.children }</Provider>
         )
     }
 ;

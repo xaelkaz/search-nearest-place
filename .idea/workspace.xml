@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a3b6be70-0221-40e7-9bc1-6f6ba6f0e147" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/data/client.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/data/client.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/map/MapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/MapView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/mapProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/mapProvider.js" afterDir="false" />
     </list>
@@ -92,6 +93,10 @@
       <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state x="100" y="123" width="1240" height="611" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.811@0.23.1440.811" timestamp="1586203701631" />
+    <state x="502" y="369" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586215973790">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="502" y="369" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586215973790" />
     <state x="469" y="200" width="670" height="576" key="search.everywhere.popup" timestamp="1586207704317">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
