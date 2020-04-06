@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import '../stylesheets/App.css';
-import GoogleMapReact from 'google-map-react';
-import { MapProvider, store } from "./hooks/mapProvider";
+import { MapProvider, store } from "./map/hooks/mapProvider";
 import MapView from "./map/MapView";
 
 function App() {

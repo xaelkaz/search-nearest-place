@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useReducer, useState } from "react";
-import clientJsonData from "../../data/client"
+import clientJsonData from "../../../data/client"
 
 const initialState = {};
 const store = createContext(initialState);

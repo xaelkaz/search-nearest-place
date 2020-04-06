@@ -1,7 +1,7 @@
 import GoogleMapReact from "google-map-react";
 import React, { useContext } from "react";
 import MapPoint from "./MapPoint";
-import { store } from "../hooks/mapProvider";
+import { store } from "./hooks/mapProvider";
 import ListOverMap from "./list-over-map/list-over-map";
 
 const MapView = () => {

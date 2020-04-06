@@ -132,8 +132,8 @@
 
   cursor: pointer;
   font-size: small;
-  font-weight: bolder;
-  font-family: Roboto;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif
 }
 
 .list-over-map .list-item:hover {
