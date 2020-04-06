@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import '../stylesheets/App.css';
-import { MapProvider, store } from "./map/hooks/mapProvider";
 import MapView from "./map/MapView";
+import { MapProvider } from "../hooks/mapProvider";
 
 function App() {
 
