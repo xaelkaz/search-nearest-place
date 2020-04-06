@@ -14,7 +14,9 @@ const MapProvider = (props) => {
         }
 
         useEffect(() => {
-            fetchData(clientJsonData).then(result => setResult(result));
+            fetchData(clientJsonData).then(result => {
+                 setResult(result.details)
+            });
         }, []);
 
         const [ state, dispatch ] = useReducer((state, action) => {
