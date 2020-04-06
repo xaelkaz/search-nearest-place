@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a3b6be70-0221-40e7-9bc1-6f6ba6f0e147" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/data/client.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/data/client.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/map/MapPoint.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/MapPoint.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/map/MapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/MapView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/mapProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/mapProvider.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +68,7 @@
       <updated>1586185424506</updated>
       <workItem from="1586185426051" duration="235000" />
       <workItem from="1586186197974" duration="9607000" />
-      <workItem from="1586204471133" duration="5380000" />
+      <workItem from="1586204471133" duration="8373000" />
     </task>
     <servers />
   </component>
@@ -83,6 +80,10 @@
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="2138" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586192343998" />
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1586213035234">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586213035234" />
     <state x="1909" y="190" key="SettingsEditor" timestamp="1586189630981">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>

@@ -15,7 +15,7 @@ const MapProvider = (props) => {
 
         useEffect(() => {
             fetchData(clientJsonData).then(result => {
-                 setResult(result.details)
+                setResult(result.details)
             });
         }, []);
 
@@ -29,8 +29,15 @@ const MapProvider = (props) => {
             }
         }, initialState);
 
+        const updateQuery = (event) => {
+            event.preventDefault();
+            const query = event.target.value;
+            const filter = result.filter(area => area.client_name.match(new RegExp(`.*${ query }.*`, 'gi')));
+            setResult(filter)
+        };
+
         return (
-            <Provider value={ { state, dispatch, result } }>{ props.children }</Provider>
+            <Provider value={ { state, dispatch, result, updateQuery } }>{ props.children }</Provider>
         )
     }
 ;

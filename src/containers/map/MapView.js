@@ -1,5 +1,5 @@
 import GoogleMapReact from "google-map-react";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import MapPoint from "../../components/map/points/MapPoint";
 import { store } from "../../hooks/mapProvider";
 import ListOverMap from "../../components/map/list-over-map/list-over-map";
@@ -7,7 +7,9 @@ import { fitBounds } from 'google-map-react/utils';
 
 const MapView = () => {
 
-    const { state, dispatch, result } = useContext(store);
+    const { state, dispatch, result, updateQuery } = useContext(store);
+
+    const [ isApiLoaded, setApiLoaded ] = useState(false);
 
     const defaultProps = {
         center: {
@@ -96,10 +98,6 @@ const MapView = () => {
         )
     }
 
-    const updateQuery = (e) => {
-        const query = e.target.value;
-        //this.props.update(query);
-    };
     // Re-center map when resizing the window
     const bindResizeListener = (map, maps, bounds) => {
         maps.event.addDomListenerOnce(map, 'idle', () => {
@@ -137,7 +135,7 @@ const MapView = () => {
         <div style={ { height: '100vh', width: '100%' } }>
             <GoogleMapReact
                 bootstrapURLKeys={ { key: 'AIzaSyB5rtdt0SYpcBBr0czE96PvkEzt8yw-XG0' } }
-                defaultCenter={ [ parseFloat(result[10].latitude), parseFloat(result[10].longitude) ] }
+                defaultCenter={ isApiLoaded ? getCenter(result) : [ parseFloat(result[0].latitude), parseFloat(result[0].longitude) ] }
                 defaultZoom={ defaultProps.zoom }
                 layerTypes={ [] }
                 options={ { styles: modalMapStyles } }
@@ -171,6 +169,7 @@ const MapView = () => {
                 <div>
                     <div className="input-group input-group-sm mb-3">
                         <input
+                            onChange={ updateQuery }
                             placeholder="Buscar por cliente"
                             type="text"
                             className="form-control"
