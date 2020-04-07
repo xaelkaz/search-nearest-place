@@ -15,6 +15,9 @@ const MapProvider = (props) => {
         const [ mapInstance, setMapInstance ] = useState(null);
         const [ mapApi, setMapApi ] = useState(null);
 
+        const [ hoverPlaceKey, setPlaceKeyHovered ] = useState(0);
+
+        const [ query, setQuery ] = useState("");
 
         const apiHasLoaded = (map, maps) => {
             setMapInstance(map);
@@ -39,8 +42,23 @@ const MapProvider = (props) => {
         const updateQuery = (event) => {
             event.preventDefault();
             const query = event.target.value;
+            setQuery(query);
             const filter = result.filter(area => area.client_name.match(new RegExp(`.*${ query }.*`, 'gi')));
             setFilterResult(filter)
+        };
+
+        const onChildClick = (key, childProps) => {
+            setQuery(childProps.clientName);
+            const filter = result.filter(area => area.client_db_ref.match(new RegExp(`.*${ childProps.clientDbRef }.*`, 'gi')));
+            setFilterResult(filter);
+        };
+
+        const onChildMouseEnter = (key, childProps) => {
+            setPlaceKeyHovered(key);
+        };
+
+        const onChildMouseLeave = () => {
+            setPlaceKeyHovered(0);
         };
 
         return (
@@ -49,9 +67,14 @@ const MapProvider = (props) => {
                 filterResult,
                 updateQuery,
                 apiHasLoaded,
+                onChildMouseEnter,
+                onChildMouseLeave,
+                onChildClick,
                 mapApiLoaded,
                 mapInstance,
-                mapApi
+                hoverPlaceKey,
+                mapApi,
+                query
             } }>{ props.children }</Provider>
         )
     }

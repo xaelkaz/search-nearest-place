@@ -8,11 +8,15 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "boostrap": "^2.0.0",
+    "classnames": "^2.2.6",
+    "framer-motion": "^1.10.3",
     "google-map-react": "^1.1.7",
     "lodash": "^4.17.15",
+    "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
+    "react-feather": "^2.0.4",
     "react-scripts": "3.4.1"
   },
   "scripts": {

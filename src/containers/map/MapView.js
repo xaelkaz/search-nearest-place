@@ -1,18 +1,28 @@
 import GoogleMapReact from "google-map-react";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { store } from "../../hooks/mapProvider";
 import ListOverMap from "../../components/map/list-over-map/list-over-map";
 import MapPoint from "../../components/map/points/MapPoint";
 import { mapStyles } from "./mapStyle";
 import _ from "lodash";
+import MarkerMap from "../../components/map/points/MarkerMap";
 
 
 const MapView = () => {
 
     const {
-        result, filterResult,
-        updateQuery, apiHasLoaded,
-        mapApiLoaded, mapInstance, mapApi
+        result,
+        filterResult,
+        updateQuery,
+        onChildMouseEnter,
+        onChildMouseLeave,
+        apiHasLoaded,
+        mapApiLoaded,
+        mapInstance,
+        mapApi,
+        query,
+        onChildClick,
+        hoverPlaceKey
     } = useContext(store);
 
     const defaultProps = {
@@ -73,10 +83,13 @@ const MapView = () => {
         return parseFloat(sum) + parseFloat(n.longitude)
     }, 0);
 
+    console.log(query)
+
     return (
         <div style={ { height: '100vh', width: '100%' } }>
             <GoogleMapReact
                 bootstrapURLKeys={ { key: 'AIzaSyB5rtdt0SYpcBBr0czE96PvkEzt8yw-XG0' } }
+                yesIWantToUseGoogleMapApiInternals
                 defaultCenter={ mapApiLoaded ? apiIsLoaded(mapInstance, mapApi, clientData) :
                     [ reduceLatitude / clientData.length, reduceLongitude / clientData.length ] }
                 zoom={ defaultProps.zoom }
@@ -91,14 +104,16 @@ const MapView = () => {
                 } }>
                 { clientData.map((point => {
                     if (point.motive_text == null) {
-                        return <MapPoint
-                            key={ point.id }
-                            lat={ parseFloat(point.latitude) }
-                            lng={ parseFloat(point.longitude) }
-                            text={ "Point 1" }
-                            name="My Marker"
-                            color="red"
-                        />
+                        return (
+                            <MarkerMap
+                                key={ point.id }
+                                lat={ point.latitude }
+                                lng={ point.longitude }
+                                clientName={ point.client_name }
+                                clientDbRef={ point.client_db_ref }
+                                motive={ point.motive_text }
+                            />
+                        )
                     } else {
                         return <MapPoint
                             key={ point.id }
@@ -126,6 +141,7 @@ const MapView = () => {
                                 width: 'calc(100% - 2rem)',
                                 margin: '1rem 1rem 0rem 1rem',
                             } }
+                            value={query}
                             aria-label="Small"
                             aria-describedby="inputGroup-sizing-sm"/>
                     </div>
