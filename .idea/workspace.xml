@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a3b6be70-0221-40e7-9bc1-6f6ba6f0e147" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/map/points/MapPoint.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/MapPoint.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/map/points/MarkerMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/MarkerMapSale.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/map/points/MarkerMap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/MarkerMap.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/map/MapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/MapView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/mapProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/mapProvider.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
@@ -35,7 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/component/map" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/map/points" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -56,6 +58,7 @@
       <recent name="$PROJECT_DIR$/src/container" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/map/points" />
       <recent name="$PROJECT_DIR$/src/component/map" />
     </key>
   </component>
@@ -99,15 +102,16 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="502" y="369" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586268891101" />
-    <state x="368" y="191" width="703" height="518" key="find.popup" timestamp="1586273536936">
+    <state x="368" y="191" width="703" height="518" key="find.popup" timestamp="1586298120099">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586273536936" />
-    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup" timestamp="1586288901790">
+    <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1586298120099" />
+    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup" timestamp="1586297849346">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586279498752" />
-    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1586288901790" />
+    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1586297849346" />
     <state x="2065" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586192795384" />
     <state x="469" y="203" width="670" height="519" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1586203531486" />
   </component>

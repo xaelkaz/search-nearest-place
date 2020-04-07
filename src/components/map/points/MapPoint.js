@@ -8,7 +8,6 @@ const MapPoint = (props) => {
                 className="pin bounce"
                 style={{ backgroundColor: color, cursor: 'pointer' }}
                 title={name}
-
             />
             <div className="pulse" />
         </div>

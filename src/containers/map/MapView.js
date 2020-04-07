@@ -5,7 +5,7 @@ import ListOverMap from "../../components/map/list-over-map/list-over-map";
 import MapPoint from "../../components/map/points/MapPoint";
 import { mapStyles } from "./mapStyle";
 import _ from "lodash";
-import MarkerMap from "../../components/map/points/MarkerMap";
+import MarkerMapSale from "../../components/map/points/MarkerMapSale";
 
 
 const MapView = () => {
@@ -30,7 +30,7 @@ const MapView = () => {
             lat: 8.986984,
             lng: -79.518519
         },
-        zoom: 12
+        zoom: 14
     };
 
     if (result.length === 0 && !mapApiLoaded) {
@@ -83,8 +83,6 @@ const MapView = () => {
         return parseFloat(sum) + parseFloat(n.longitude)
     }, 0);
 
-    console.log(query)
-
     return (
         <div style={ { height: '100vh', width: '100%' } }>
             <GoogleMapReact
@@ -105,7 +103,7 @@ const MapView = () => {
                 { clientData.map((point => {
                     if (point.motive_text == null) {
                         return (
-                            <MarkerMap
+                            <MarkerMapSale
                                 key={ point.id }
                                 lat={ point.latitude }
                                 lng={ point.longitude }
@@ -141,7 +139,7 @@ const MapView = () => {
                                 width: 'calc(100% - 2rem)',
                                 margin: '1rem 1rem 0rem 1rem',
                             } }
-                            value={query}
+                            value={ query }
                             aria-label="Small"
                             aria-describedby="inputGroup-sizing-sm"/>
                     </div>

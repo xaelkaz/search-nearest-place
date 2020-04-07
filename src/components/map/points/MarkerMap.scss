@@ -14,8 +14,8 @@ $black: #2d2d2d;
 $K_SIZE: 40px;
 $I_SIZE: 20px;
 
-.place-marker,
-.place-marker--hover{
+.sale-marker,
+.sale-marker--hover{
   position: absolute;
   width: $K_SIZE;
   height: $K_SIZE;
@@ -45,7 +45,7 @@ $I_SIZE: 20px;
   }
 }
 
-.place-marker--hover{
+.sale-marker--hover{
   & > .marker-indicator{
     transition: transform 0.2s ease;
     transform: scale(1.5) !important;
@@ -53,7 +53,7 @@ $I_SIZE: 20px;
   }
 }
 
-.place-marker-info-wrapper{
+.sale-marker-info-wrapper{
   position: absolute;
   left: -105px;
   top: calc(-100% - 70px);
@@ -67,13 +67,13 @@ $I_SIZE: 20px;
   text-align: left;
   z-index: 2;
 
-  & > .place-marker-title{
+  & > .sale-marker-title{
     color: $gray;
     font-size: 12px;
     display: block;
   }
 
-  & > .place-marker-schedule{
+  & > .sale-marker-schedule{
     color: $gray;
     font-size: 11px;
     margin: 7px 0 11px 0;

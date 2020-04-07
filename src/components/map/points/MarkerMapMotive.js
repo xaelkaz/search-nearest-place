@@ -3,13 +3,16 @@ import clx from "classnames";
 import { motion, AnimatePresence } from "framer-motion";
 import "./MarkerMap.scss";
 
-export default function MarkerMap(props) {
+export default function MarkerMapMotive(props) {
     return (
-        <div className={ clx("place-marker", { "place-marker--hover": props.hover || props.$hover }) }>
+        <div className={ clx("sale-marker", { "sale-marker--hover": props.hover || props.$hover }) }>
             <AnimatePresence exitBeforeEnter>
                 { (props.$hover) && <MarkerInfo { ...props } /> }
+                <div className="pulse" />
+
             </AnimatePresence>
             <motion.span whileTap={ { scale: 1.1 } } className="marker-indicator"/>
+
         </div>
     );
 }
@@ -46,9 +49,9 @@ export function MarkerInfo({ clientName, clientDbRef, motive }) {
 
     return (
         <motion.div variants={ markerVariants } initial="hidden" animate="visible" exit="exit"
-                    className="place-marker-info-wrapper">
-            <motion.div className="place-marker-title"> Client: { clientName }</motion.div>
-            <motion.div className="place-marker-schedule"> Código: { clientDbRef }</motion.div>
+                    className="sale-marker-info-wrapper">
+            <motion.div className="sale-marker-title"> Client: { clientName }</motion.div>
+            <motion.div className="sale-marker-schedule"> Código: { clientDbRef }</motion.div>
         </motion.div>
     );
 }
