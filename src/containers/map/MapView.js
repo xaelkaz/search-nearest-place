@@ -10,7 +10,6 @@ import _ from "lodash";
 const MapView = () => {
 
     const {
-        state, dispatch,
         result, filterResult,
         updateQuery, apiHasLoaded,
         mapApiLoaded, mapInstance, mapApi

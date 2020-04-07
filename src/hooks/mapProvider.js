@@ -36,16 +36,6 @@ const MapProvider = (props) => {
             });
         }, []);
 
-        const [ state, dispatch ] = useReducer((state, action) => {
-            switch (action.type) {
-                case 'action description':
-                    const newState = "HOLA";
-                    return newState;
-                default:
-                    throw Error()
-            }
-        }, initialState);
-
         const updateQuery = (event) => {
             event.preventDefault();
             const query = event.target.value;
@@ -55,8 +45,6 @@ const MapProvider = (props) => {
 
         return (
             <Provider value={ {
-                state,
-                dispatch,
                 result,
                 filterResult,
                 updateQuery,

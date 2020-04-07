@@ -7,7 +7,7 @@ export const mapStyles = [
                 visibility: "on"
             },
             {
-                color: "#e0efef"
+                //color: "#e0efef"
             }
         ]
     },
