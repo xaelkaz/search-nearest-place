@@ -4,6 +4,7 @@ import MapPoint from "../../components/map/points/MapPoint";
 import { store } from "../../hooks/mapProvider";
 import ListOverMap from "../../components/map/list-over-map/list-over-map";
 import { fitBounds } from 'google-map-react/utils';
+import { mapStyles } from "./mapStyle";
 
 const MapView = () => {
 
@@ -21,77 +22,6 @@ const MapView = () => {
         },
         zoom: 15
     };
-    const modalMapStyles = [
-        {
-            featureType: "landscape.natural",
-            elementType: "geometry.fill",
-            stylers: [
-                {
-                    visibility: "on"
-                },
-                {
-                    color: "#e0efef"
-                }
-            ]
-        },
-        {
-            featureType: "poi",
-            elementType: "geometry.fill",
-            stylers: [
-                {
-                    visibility: "on"
-                },
-                {
-                    hue: "#1900ff"
-                },
-                {
-                    color: "#c0e8e8"
-                }
-            ]
-        },
-        {
-            featureType: "road",
-            elementType: "geometry",
-            stylers: [
-                {
-                    lightness: 900
-                },
-                {
-                    visibility: "simplified"
-                }
-            ]
-        },
-        {
-            featureType: "road",
-            elementType: "labels",
-            stylers: [
-                {
-                    visibility: "off"
-                }
-            ]
-        },
-        {
-            featureType: "transit.line",
-            elementType: "geometry",
-            stylers: [
-                {
-                    visibility: "on"
-                },
-                {
-                    lightness: 700
-                }
-            ]
-        },
-        {
-            featureType: "water",
-            elementType: "all",
-            stylers: [
-                {
-                    color: "#7dcdcd"
-                }
-            ]
-        }
-    ];
 
     if (result.length === 0) {
         return (
@@ -141,7 +71,7 @@ const MapView = () => {
                 defaultCenter={ mapApiLoaded ? apiIsLoaded(mapInstance, mapApi, clientData) : [ parseFloat(clientData[0].latitude), parseFloat(clientData[0].longitude) ] }
                 defaultZoom={ defaultProps.zoom }
                 layerTypes={ [] }
-                options={ { styles: modalMapStyles } }
+                options={ { styles: mapStyles } }
                 onGoogleApiLoaded={ ({ map, maps }) => apiHasLoaded(map, maps) }>
                 { clientData.map((point => {
                     if (point.motive_text == null) {
