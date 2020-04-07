@@ -1,10 +1,10 @@
-import GoogleMapReact from "google-map-react";
 import React, { useContext, useState } from "react";
-import MapPoint from "../../components/map/points/MapPoint";
 import { store } from "../../hooks/mapProvider";
 import ListOverMap from "../../components/map/list-over-map/list-over-map";
-import { fitBounds } from 'google-map-react/utils';
-import { mapStyles } from "./mapStyle";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import _ from "lodash"
+
+const GOOGLE_MAPS_API_KEY = 'AIzaSyB5rtdt0SYpcBBr0czE96PvkEzt8yw-XG0'
 
 const MapView = () => {
 
@@ -64,40 +64,61 @@ const MapView = () => {
     };
 
     const clientData = filterResult.length > 0 ? filterResult : result;
+
+    const reduceLatitude = _.reduce(clientData, function (sum, n) {
+        return parseFloat(sum) + parseFloat(n.latitude)
+    }, 0);
+
+    const reduceLongitude = _.reduce(clientData, function (sum, n) {
+        return parseFloat(sum) + parseFloat(n.longitude)
+    }, 0);
+
     return (
         <div style={ { height: '100vh', width: '100%' } }>
-            <GoogleMapReact
-                bootstrapURLKeys={ { key: 'AIzaSyB5rtdt0SYpcBBr0czE96PvkEzt8yw-XG0' } }
-                defaultCenter={ mapApiLoaded ? apiIsLoaded(mapInstance, mapApi, clientData) : [ parseFloat(clientData[0].latitude), parseFloat(clientData[0].longitude) ] }
-                defaultZoom={ defaultProps.zoom }
-                layerTypes={ [] }
-                options={ { styles: mapStyles } }
-                onGoogleApiLoaded={ ({ map, maps }) => apiHasLoaded(map, maps) }>
-                { clientData.map((point => {
-                    if (point.motive_text == null) {
-                        return <MapPoint
-                            key={ point.id }
-                            lat={ parseFloat(point.latitude) }
-                            lng={ parseFloat(point.longitude) }
-                            text={ "Point 1" }
-                            name="My Marker"
-                            color="red"
-                        />
-                    } else {
-                        return <MapPoint
-                            key={ point.id }
-                            lat={ parseFloat(point.latitude) }
-                            lng={ parseFloat(point.longitude) }
-                            text={ "Point 1" }
-                            name="My Marker"
-                            color="green"
-                        />
+            <LoadScript
+                id='script-loader'
+                googleMapsApiKey={ GOOGLE_MAPS_API_KEY }
+            >
+                <GoogleMap
+                    id='circle-example'
+                    mapContainerStyle={ {
+                        height: '100%',
+                        width: '100%'
+                    } }
+                    onLoad={ map => {
+                        const bounds = new window.google.maps.LatLngBounds();
+                        (filterResult.length > 0 ? filterResult : result).forEach((place) => {
+                            bounds.extend(new window.google.maps.LatLng(
+                                place.latitude,
+                                place.longitude
+                            ));
+                        });
+
+                        map.fitBounds(bounds);
+                    } }
+                    center={ {
+                        lat: (reduceLatitude / clientData.length),
+                        lng: (reduceLongitude / clientData.length),
+                        //lat: parseFloat(clientData[0].latitude),
+                        //lng: parseFloat(clientData[0].longitude)
+                    } }
+                >
+                    { clientData.map((point => {
+                        if (point.motive_text == null) {
+                            return <Marker
+                                position={ { lat: parseFloat(point.latitude), lng: parseFloat(point.longitude) } }/>
+
+                        } else {
+                            return <Marker
+                                position={ { lat: parseFloat(point.latitude), lng: parseFloat(point.longitude) } }/>
+
+                        }
+
+                    }))
+
                     }
-
-                }))
-
-                }
-            </GoogleMapReact>
+                </GoogleMap>
+            </LoadScript>
             <ListOverMap>
                 <div>
                     <div className="input-group input-group-sm mb-3">

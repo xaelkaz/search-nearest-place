@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useReducer, useState } from "react";
-import clientJsonData from "../assets/data/client"
-
+import clientJsonData from "../assets/data/clientJsonExtra"
+import _ from "lodash"
 const initialState = {};
 const store = createContext(initialState);
 const { Provider, Consumer } = store;
@@ -27,7 +27,11 @@ const MapProvider = (props) => {
 
         useEffect(() => {
             fetchData(clientJsonData).then(result => {
-                setResult(result.details)
+                const filterNullJson = result.details.filter(det => {
+                    return det.latitude !== null || det.longitude !== null
+                });
+
+                setResult(_.uniqBy(filterNullJson, "client_db_ref"))
             });
         }, []);
 
