@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a3b6be70-0221-40e7-9bc1-6f6ba6f0e147" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/data/client.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/data/client.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/map/points/MarkerMap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/MarkerMap.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/map/points/MarkerMapMotive.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/MarkerMapMotive.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/map/points/MarkerMapSale.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/MarkerMapSale.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/map/MapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/MapView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/mapProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/mapProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stylesheets/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/App.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,9 +88,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="2138" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586192343998">
-      <screen x="1440" y="23" width="1920" height="1057" />
+    <state x="524" y="240" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586316675957">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="524" y="240" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1586316675957" />
     <state x="2138" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586192343998" />
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1586276536982">
       <screen x="0" y="0" width="1440" height="900" />
@@ -113,16 +110,16 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="502" y="369" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586268891101" />
-    <state x="368" y="191" width="703" height="518" key="find.popup" timestamp="1586298120099">
+    <state x="368" y="191" width="703" height="518" key="find.popup" timestamp="1586316522369">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586273536936" />
-    <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1586298120099" />
-    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup" timestamp="1586313557039">
+    <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1586316522369" />
+    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup" timestamp="1586316486330">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586279498752" />
-    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1586313557039" />
+    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1586316486330" />
     <state x="2065" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586192795384" />
     <state x="469" y="203" width="670" height="519" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1586203531486" />
   </component>

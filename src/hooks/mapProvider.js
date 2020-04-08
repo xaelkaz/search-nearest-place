@@ -55,7 +55,7 @@ const MapProvider = (props) => {
             points,
             bounds,
             zoom,
-            options: { radius: 40, maxZoom: 24 }
+            options: { radius: 40, maxZoom: 18 }
         });
 
         async function fetchData(url) {
