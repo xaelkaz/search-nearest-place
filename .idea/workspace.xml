@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3b6be70-0221-40e7-9bc1-6f6ba6f0e147" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/map/points/MarkerMap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/MarkerMap.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/map/MapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/MapView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/svg/sale.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +72,7 @@
       <workItem from="1586186197974" duration="9607000" />
       <workItem from="1586204471133" duration="8373000" />
       <workItem from="1586349301375" duration="10366000" />
-      <workItem from="1586375044358" duration="2725000" />
+      <workItem from="1586375044358" duration="2822000" />
     </task>
     <servers />
   </component>
@@ -126,10 +122,10 @@
     </state>
     <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586273536936" />
     <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1586366293018" />
-    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup" timestamp="1586377437425">
+    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup" timestamp="1586378764102">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586377437425" />
+    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586378764102" />
     <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1586367389551" />
     <state x="2065" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586192795384" />
     <state x="469" y="203" width="670" height="519" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1586203531486" />
