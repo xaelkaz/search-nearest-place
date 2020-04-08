@@ -1,7 +1,7 @@
 import React from "react";
 import clx from "classnames";
 import { motion, AnimatePresence } from "framer-motion";
-import "./MarkerMap.scss";
+import "../MarkerMap.scss";
 
 export default function MarkerMapSale(props) {
     if (props.motive === null) {

@@ -1,8 +1,8 @@
 $lightGreen: #9cc5b5;
-$green: #388A6B;
+$green: #4CAF50;
 $greenDark: #3d7761;
 $greenDarker: #346653;
-$red: #c92c40;
+$red: #D32F2F;
 $white: #fff;
 $white2: #f5f1ee;
 $gray: #838383;
@@ -10,9 +10,11 @@ $lightgray: #b3b3b3;
 $grayDarker: #534943;
 $grayTextDescription: #bdbab8;
 $black: #2d2d2d;
+$blue: #42A5F5;
 
 $K_SIZE: 40px;
 $I_SIZE: 20px;
+$X_SIZE: 60px;
 
 .sale-marker,
 .sale-marker--hover {
@@ -141,6 +143,45 @@ $I_SIZE: 20px;
   }
 }
 
+.cluster-marker,
+.cluster-marker--hover {
+  position: absolute;
+  width: $X_SIZE;
+  height: $X_SIZE;
+  left: -$X_SIZE / 2;
+  top: -$X_SIZE / 2;
+  display: grid;
+  place-content: center;
+  border-radius: $X_SIZE;
+  background-color: rgba($color: lighten($color: $blue, $amount: 10), $alpha: 0.5);
+  text-align: center;
+  border: solid 2px;
+  color: $white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 4px;
+  cursor: pointer;
+
+  & > .marker-indicator {
+    width: $K_SIZE;
+    height: $K_SIZE;
+    border-radius: $K_SIZE;
+    background-color: rgba($color: darken($color: $blue, $amount: 5), $alpha: 0.8);
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease;
+    // pointer-events: none;
+    // z-index: -1;
+  }
+}
+
+.cluster-marker--hover {
+  & > .marker-indicator {
+    transition: transform 0.2s ease;
+    transform: scale(1.2) !important;
+    background-color: $blue;
+  }
+}
 :export {
   constSize: $K_SIZE;
 }

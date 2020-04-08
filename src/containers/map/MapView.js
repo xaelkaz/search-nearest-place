@@ -2,11 +2,12 @@ import GoogleMapReact from "google-map-react";
 import React, { useContext, useState } from "react";
 import { store } from "../../hooks/mapProvider";
 import ListOverMap from "../../components/map/list-over-map/list-over-map";
-import MapPoint from "../../components/map/points/MapPoint";
+import MapPoint from "../../components/map/points/single/MapPoint";
 import { mapStyles } from "./mapStyle";
 import _ from "lodash";
-import MarkerMapSale from "../../components/map/points/MarkerMapSale";
-import MarkerMapMotive from "../../components/map/points/MarkerMapMotive";
+import MarkerMapSale from "../../components/map/points/single/MarkerMapSale";
+import MarkerMapMotive from "../../components/map/points/single/MarkerMapMotive";
+import MarkerMapCluster from "../../components/map/points/cluster/MarkerMapCluster";
 
 const Marker = ({ children }) => children;
 
@@ -37,7 +38,7 @@ const MapView = () => {
             lng: -79.518519
         },
         zoom: 10,
-        maxZoom: 18
+        maxZoom: 19
     };
 
     // Re-center map when resizing the window
@@ -174,7 +175,7 @@ const MapView = () => {
                             onChange={ updateQuery }
                             placeholder="Buscar por cliente"
                             type="text"
-                            onPaste={onselectstart}
+                            onPaste={ onselectstart }
                             className="form-control"
                             style={ {
                                 width: 'calc(100% - 2rem)',

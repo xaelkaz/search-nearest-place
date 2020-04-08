@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3b6be70-0221-40e7-9bc1-6f6ba6f0e147" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/map/points/cluster/MarkerMapCluster.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/data/client.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/data/client.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/map/points/MarkerMapSale.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/MarkerMapSale.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/map/points/MapPoint.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/single/MapPoint.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/map/points/MarkerMap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/MarkerMap.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/map/points/MarkerMapMotive.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/single/MarkerMapMotive.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/map/points/MarkerMapSale.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/single/MarkerMapSale.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/map/MapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/MapView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/mapProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/mapProvider.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,16 +51,16 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components/map/points" />
-      <recent name="$PROJECT_DIR$/src/assets" />
-      <recent name="$PROJECT_DIR$/src/containers/map" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/container" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/map/points" />
       <recent name="$PROJECT_DIR$/src/component/map" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/map/points" />
+      <recent name="$PROJECT_DIR$/src/components/map/points/single/cluster" />
+      <recent name="$PROJECT_DIR$/src/components/map/points/single" />
+      <recent name="$PROJECT_DIR$/src/assets" />
+      <recent name="$PROJECT_DIR$/src/containers/map" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -74,7 +76,7 @@
       <workItem from="1586185426051" duration="235000" />
       <workItem from="1586186197974" duration="9607000" />
       <workItem from="1586204471133" duration="8373000" />
-      <workItem from="1586349301375" duration="7234000" />
+      <workItem from="1586349301375" duration="10366000" />
     </task>
     <servers />
   </component>
@@ -97,19 +99,19 @@
     </state>
     <state x="524" y="240" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1586316675957" />
     <state x="2138" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586192343998" />
-    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1586351566376">
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1586374215129">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586276536982" />
-    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1586351566376" />
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1586374215129" />
     <state x="1909" y="190" key="SettingsEditor" timestamp="1586189630981">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="1909" y="190" key="SettingsEditor/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586189630981" />
-    <state x="100" y="111" width="1240" height="679" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586313838497">
+    <state x="100" y="111" width="1240" height="679" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586373965619">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="100" y="111" width="1240" height="679" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1586313838497" />
+    <state x="100" y="111" width="1240" height="679" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1586373965619" />
     <state x="100" y="123" width="1240" height="611" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.811@0.23.1440.811" timestamp="1586203701631" />
     <state x="378" y="72" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586353636342">
       <screen x="0" y="0" width="1440" height="900" />
@@ -119,17 +121,29 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="502" y="369" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586268891101" />
-    <state x="368" y="191" width="703" height="518" key="find.popup" timestamp="1586350537908">
+    <state x="368" y="191" width="703" height="518" key="find.popup" timestamp="1586366293018">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586273536936" />
-    <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1586350537908" />
-    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup" timestamp="1586360872208">
+    <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1586366293018" />
+    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup" timestamp="1586367389551">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586279498752" />
-    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1586360872208" />
+    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1586367389551" />
     <state x="2065" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586192795384" />
     <state x="469" y="203" width="670" height="519" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1586203531486" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/containers/map/MapView.js</url>
+          <line>132</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
