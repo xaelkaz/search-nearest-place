@@ -8,7 +8,7 @@ export default function MarkerMapSale(props) {
         return (
             <div className={ clx("sale-marker", { "sale-marker--hover": props.hover || props.$hover }) }>
                 <AnimatePresence exitBeforeEnter>
-                    { (props.$hover) && <MarkerInfoSale { ...props } /> }
+                    { (props.$hover || props.hover) && <MarkerInfoSale { ...props } /> }
                 </AnimatePresence>
                 <motion.span whileTap={ { scale: 1.1 } } className="marker-indicator"/>
             </div>
@@ -17,7 +17,7 @@ export default function MarkerMapSale(props) {
         return (
             <div className={ clx("no-sale-marker", { "no-sale-marker--hover": props.hover || props.$hover }) }>
                 <AnimatePresence exitBeforeEnter>
-                    { (props.$hover) && <MarkerInfoNoSale { ...props } /> }
+                    { (props.$hover || props.hover) && <MarkerInfoNoSale { ...props } /> }
                 </AnimatePresence>
                 <motion.span whileTap={ { scale: 1.1 } } className="marker-indicator"/>
             </div>

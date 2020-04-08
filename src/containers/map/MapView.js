@@ -2,14 +2,12 @@ import GoogleMapReact from "google-map-react";
 import React, { useContext, useState } from "react";
 import { store } from "../../hooks/mapProvider";
 import ListOverMap from "../../components/map/list-over-map/list-over-map";
-import MapPoint from "../../components/map/points/single/MapPoint";
 import { mapStyles } from "./mapStyle";
-import _ from "lodash";
 import MarkerMapSale from "../../components/map/points/single/MarkerMapSale";
-import MarkerMapMotive from "../../components/map/points/single/MarkerMapMotive";
-import MarkerMapCluster from "../../components/map/points/cluster/MarkerMapCluster";
-import { CheckCircle, DashCircleFill, PersonCheck, PersonCheckFill } from "react-bootstrap-icons";
-import PlusCircleFill from "react-bootstrap-icons/dist/icons/plus-circle-fill";
+import { CheckCircle, DashCircleFill, PersonCheck, PersonCheckFill, XCircleFill } from "react-bootstrap-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowCircleDown, faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import { toCamelCaseString } from "../../utils/ToCamelCaseString";
 
 const Marker = ({ children }) => children;
 
@@ -32,6 +30,8 @@ const MapView = () => {
         supercluster,
         points,
         reduceCenter,
+        clearQueryInput,
+        hoverPlaceKey
     } = useContext(store);
 
     const defaultProps = {
@@ -100,11 +100,10 @@ const MapView = () => {
 
     function renderIcon(motive) {
         if (motive != null) {
-            return <DashCircleFill style={ { marginRight: 5 } } color={ "#D32F2F" } size={ 25 }/>
-
+            return <FontAwesomeIcon icon={ faTimesCircle } style={ { marginRight: 5} } color={ "#D32F2F" } size="lg" />
         }
-        return <CheckCircle style={ { marginRight: 5 } } color={ "#4CAF50" }
-                               size={ 25 }/>
+        return <FontAwesomeIcon icon={ faCheckCircle } style={ { marginRight: 5 } } color={ "#4CAF50" } size="lg" />
+
 
     }
 
@@ -176,13 +175,14 @@ const MapView = () => {
                             clientName={ cluster.properties.name }
                             clientDbRef={ cluster.properties.uid }
                             motive={ cluster.properties.motive }
+                            hover={ hoverPlaceKey === `point-${ cluster.properties.pointId }` }
                         />
                     );
                 }) }
             </GoogleMapReact>
             <ListOverMap>
                 <div>
-                    <div className="ui search input-group input-group-sm mb-3">
+                    <div className="input-group input-group-sm mb-3 clear-input">
                         <input
                             onChange={ updateQuery }
                             placeholder="Buscar por cliente"
@@ -197,20 +197,27 @@ const MapView = () => {
                             value={ query }
                             aria-label="Small"
                             aria-describedby="inputGroup-sizing-sm"/>
+                        <span><FontAwesomeIcon icon={ faTimesCircle }/></span>
+
                     </div>
                     <div>
                         {
                             (filterResult.length > 0 ? filterResult : result).map(area => (
-                                <div className="list-item"
+                                <div className="list-item truncate"
                                      style={ {
                                          paddingLeft: 20,
-                                         paddingBottom: 10
+                                         paddingBottom: 10,
+                                         overflow: 'hidden',
+                                         textOverflow: 'ellipsis',
                                      } }
-                                     key={ `item-${ area.id }` }>
+                                     key={ `point-${ area.id }` }
+                                     onMouseEnter={ (event => (onChildMouseEnter(event, `point-${ area.id }`))) }
+                                     onMouseLeave={ onChildMouseLeave }
+                                >
                                     {
                                         renderIcon(area.motive_text)
                                     }
-                                    { area.client_name } - { area.client_db_ref } - { area.activity_name }
+                                    <span style={{ fontWeight: 700}}>{ area.client_db_ref }</span> - { (area.client_name) }
                                 </div>
                             ))
                         }

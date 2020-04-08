@@ -102,13 +102,18 @@ const MapProvider = (props) => {
         };
 
         const onChildClick = (key, childProps) => {
-            setQuery(childProps.clientName);
-            const filter = result.filter(area => area.client_db_ref.match(new RegExp(`.*${ childProps.clientDbRef }.*`, 'gi')));
+            setQuery(childProps.client_name);
+            const filter = result.filter(area => area.client_db_ref.match(new RegExp(`.*${ childProps.client_db_ref }.*`, 'gi')));
             setFilterResult(filter);
         };
 
-        const onChildMouseEnter = (key, childProps) => {
-            setPlaceKeyHovered(key);
+        const clearQueryInput = () => {
+            setQuery("");
+        };
+
+        const onChildMouseEnter = (event, childProps) => {
+            event.preventDefault();
+            setPlaceKeyHovered(childProps);
         };
 
         const onChildMouseLeave = () => {
@@ -126,6 +131,7 @@ const MapProvider = (props) => {
                 onChildClick,
                 setZoomProvider,
                 setBoundsProvider,
+                clearQueryInput,
                 mapApiLoaded,
                 mapInstance,
                 hoverPlaceKey,
