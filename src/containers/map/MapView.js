@@ -28,7 +28,7 @@ const MapView = () => {
         clusters,
         supercluster,
         points,
-        hoverPlaceKey
+        reduceCenter,
     } = useContext(store);
 
     const defaultProps = {
@@ -36,16 +36,9 @@ const MapView = () => {
             lat: 8.986984,
             lng: -79.518519
         },
-        zoom: 10
+        zoom: 10,
+        maxZoom: 18
     };
-
-    if (result.length === 0 && !mapApiLoaded) {
-        return (
-            <div>
-                <p>Loading</p>
-            </div>
-        )
-    }
 
     // Re-center map when resizing the window
     const bindResizeListener = (map, maps, bounds) => {
@@ -81,23 +74,42 @@ const MapView = () => {
 
     const clientData = filterResult.length > 0 ? filterResult : result;
 
-    const reduceLatitude = _.reduce(clientData, function (sum, n) {
-        return parseFloat(sum) + parseFloat(n.latitude)
-    }, 0);
 
-    const reduceLongitude = _.reduce(clientData, function (sum, n) {
-        return parseFloat(sum) + parseFloat(n.longitude)
-    }, 0);
+    if (clientData.length === 0 && !mapApiLoaded) {
+        return (
+            <div>
+                <p>Loading</p>
+            </div>
+        )
+    }
+
+    const resetZoomCenter = () => {
+        if (mapApiLoaded && query.length > 0) {
+            return apiIsLoaded(mapInstance, mapApi, result)
+        } else {
+            return reduceCenter
+        }
+    };
+
+    const onselectstart = (e) => {
+        e.preventDefault()
+    };
 
     return (
         <div style={ { height: '100vh', width: '100%' } }>
             <GoogleMapReact
                 bootstrapURLKeys={ { key: 'AIzaSyB5rtdt0SYpcBBr0czE96PvkEzt8yw-XG0' } }
+                onGoogleApiLoaded={ ({ map, maps }) => {
+                    map.setOptions({
+                        maxZoom: defaultProps.maxZoom,
+                    });
+                    apiHasLoaded(map, maps);
+                    apiIsLoaded(map, maps, clientData)
+                } }
                 yesIWantToUseGoogleMapApiInternals
-                defaultCenter={ mapApiLoaded && query.length > 0 ? apiIsLoaded(mapInstance, mapApi, clientData) :
-                    [ reduceLatitude / clientData.length, reduceLongitude / clientData.length ] }
                 zoom={ defaultProps.zoom }
                 layerTypes={ [] }
+                center={ mapApiLoaded && filterResult.length > 0 ? apiIsLoaded(mapInstance, mapApi, clientData) : resetZoomCenter() }
                 options={ { styles: mapStyles } }
                 onChange={ ({ zoom, bounds }) => {
                     setZoomProvider(zoom);
@@ -107,12 +119,6 @@ const MapView = () => {
                         bounds.se.lng,
                         bounds.nw.lat
                     ]);
-                } }
-                onGoogleApiLoaded={ ({ map, maps }) => {
-                    map.setOptions({
-                        maxZoom: 18,
-                    });
-                    apiHasLoaded(map, maps)
                 } }>
                 { clusters.map(cluster => {
                     const [ longitude, latitude ] = cluster.geometry.coordinates;
@@ -168,6 +174,7 @@ const MapView = () => {
                             onChange={ updateQuery }
                             placeholder="Buscar por cliente"
                             type="text"
+                            onPaste={onselectstart}
                             className="form-control"
                             style={ {
                                 width: 'calc(100% - 2rem)',

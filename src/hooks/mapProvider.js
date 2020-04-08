@@ -21,8 +21,11 @@ const MapProvider = (props) => {
         const [ query, setQuery ] = useState("");
 
         const mapRef = useRef();
+
         const [ bounds, setBounds ] = useState(null);
         const [ zoom, setZoom ] = useState(10);
+
+        const [ reduceCenter, setReduceCenter ] = useState([ 9.084515, -79.393285 ]);
 
         const apiHasLoaded = (map, maps) => {
             setMapInstance(map);
@@ -67,17 +70,28 @@ const MapProvider = (props) => {
                 const filterNullJson = result.details.filter(det => {
                     return det.latitude !== null || det.longitude !== null
                 });
+                const filterUniqueValue = _.uniqBy(filterNullJson, "client_db_ref");
 
-                setResult(_.uniqBy(filterNullJson, "client_db_ref"))
+                const reduceLatitude = _.reduce(filterUniqueValue, function (sum, n) {
+                    return parseFloat(sum) + parseFloat(n.latitude)
+                }, 0);
+
+                const reduceLongitude = _.reduce(filterUniqueValue, function (sum, n) {
+                    return parseFloat(sum) + parseFloat(n.longitude)
+                }, 0);
+
+                setReduceCenter([ reduceLatitude / filterUniqueValue.length, reduceLongitude / filterUniqueValue.length ]);
+
+                setResult(filterUniqueValue)
             });
         }, []);
 
         const updateQuery = (event) => {
             event.preventDefault();
             const query = event.target.value;
-            setQuery(query);
             const filter = result.filter(area => area.client_name.match(new RegExp(`.*${ query }.*`, 'gi')));
-            setFilterResult(filter)
+            setFilterResult(filter);
+            setQuery(query);
         };
 
         const setZoomProvider = (zoom) => {
@@ -119,7 +133,8 @@ const MapProvider = (props) => {
                 query,
                 clusters,
                 supercluster,
-                points
+                points,
+                reduceCenter
             } }>{ props.children }</Provider>
         )
     }

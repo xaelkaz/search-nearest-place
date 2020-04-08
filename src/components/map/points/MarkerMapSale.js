@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./MarkerMap.scss";
 
 export default function MarkerMapSale(props) {
-    console.log(props)
     if (props.motive === null) {
         return (
             <div className={ clx("sale-marker", { "sale-marker--hover": props.hover || props.$hover }) }>

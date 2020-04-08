@@ -15,6 +15,32 @@
       "total_count": 32
     },
     {
+      "id": 65507,
+      "client_name": "ORLYN, S.A. (TERPEL 24 DE DICIEMBRE) + (ACH)",
+      "client_db_ref": "C00000000008526",
+      "created_date": "2020-04-01 16:50:07.875",
+      "latitude": "9.094465",
+      "longitude": "-79.352905",
+      "activity_name": "VENTA",
+      "total": "123.84",
+      "motive_text": null,
+      "has_allowed_location": true,
+      "total_count": 231
+    },
+    {
+      "id": 65620,
+      "client_name": "COMISARIATO NUEVO BELEN",
+      "client_db_ref": "MIGC0777",
+      "created_date": "2020-04-02 09:33:45.527",
+      "latitude": "9.084515",
+      "longitude": "-79.393285",
+      "activity_name": "VENTA",
+      "total": "59.43316284",
+      "motive_text": null,
+      "has_allowed_location": true,
+      "total_count": 231
+    },
+    {
       "id": 32846,
       "client_name": "M/S AIRES DEL MAR",
       "client_db_ref": "MG003886",
