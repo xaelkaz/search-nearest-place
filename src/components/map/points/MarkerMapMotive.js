@@ -5,7 +5,7 @@ import "./MarkerMap.scss";
 
 export default function MarkerMapMotive(props) {
     return (
-        <div className={ clx("sale-marker", { "sale-marker--hover": props.hover || props.$hover }) }>
+        <div className={ clx("no-sale-marker", { "no-sale-marker--hover": props.hover || props.$hover }) }>
             <AnimatePresence exitBeforeEnter>
                 { (props.$hover) && <MarkerInfo { ...props } /> }
                 <div className="pulse" />
@@ -50,8 +50,9 @@ export function MarkerInfo({ clientName, clientDbRef, motive }) {
     return (
         <motion.div variants={ markerVariants } initial="hidden" animate="visible" exit="exit"
                     className="sale-marker-info-wrapper">
-            <motion.div className="sale-marker-title"> Client: { clientName }</motion.div>
-            <motion.div className="sale-marker-schedule"> Código: { clientDbRef }</motion.div>
+            <motion.div className="sale-marker-title"> CLIENTE: { clientName }</motion.div>
+            <motion.div className="sale-marker-title"> MOTIVO: { motive }</motion.div>
+            <motion.div className="sale-marker-schedule"> CODIGO: { clientDbRef }</motion.div>
         </motion.div>
     );
 }

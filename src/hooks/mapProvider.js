@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useRef, useState } from "react";
-import clientJsonData from "../assets/data/clientJsonExtra"
+import clientJsonData from "../assets/data/client"
 import _ from "lodash"
 import useSupercluster from "use-supercluster";
 
@@ -37,9 +37,10 @@ const MapProvider = (props) => {
             properties: {
                 cluster: false,
                 pointId: point.id,
-                category: point.activity_name,
-                name: point.client_name,
-                uid: point.client_db_ref
+                "category": point.activity_name,
+                "name": point.client_name,
+                "uid": point.client_db_ref,
+                "motive": point.motive_text
             },
             geometry: {
                 type: "Point",
@@ -54,7 +55,7 @@ const MapProvider = (props) => {
             points,
             bounds,
             zoom,
-            options: { radius: 50, maxZoom: 17 }
+            options: { radius: 40, maxZoom: 24 }
         });
 
         async function fetchData(url) {
@@ -118,7 +119,6 @@ const MapProvider = (props) => {
                 query,
                 clusters,
                 supercluster,
-                zoom,
                 points
             } }>{ props.children }</Provider>
         )

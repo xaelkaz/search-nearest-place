@@ -6,6 +6,7 @@ import MapPoint from "../../components/map/points/MapPoint";
 import { mapStyles } from "./mapStyle";
 import _ from "lodash";
 import MarkerMapSale from "../../components/map/points/MarkerMapSale";
+import MarkerMapMotive from "../../components/map/points/MarkerMapMotive";
 
 const Marker = ({ children }) => children;
 
@@ -27,7 +28,7 @@ const MapView = () => {
         clusters,
         supercluster,
         points,
-        zoom
+        hoverPlaceKey
     } = useContext(store);
 
     const defaultProps = {
@@ -35,7 +36,7 @@ const MapView = () => {
             lat: 8.986984,
             lng: -79.518519
         },
-        zoom: 14
+        zoom: 10
     };
 
     if (result.length === 0 && !mapApiLoaded) {
@@ -110,7 +111,6 @@ const MapView = () => {
                 onGoogleApiLoaded={ ({ map, maps }) => {
                     map.setOptions({
                         maxZoom: 18,
-                        minZoom: defaultProps.zoom
                     });
                     apiHasLoaded(map, maps)
                 } }>
@@ -135,10 +135,9 @@ const MapView = () => {
                                         height: `${ 50 + (pointCount / points.length) * 20 }px`
                                     } }
                                     onClick={ () => {
-                                        console.log('CLICK', cluster)
                                         const expansionZoom = Math.min(
                                             supercluster.getClusterExpansionZoom(cluster.id),
-                                            18
+                                            15
                                         );
                                         mapInstance.setZoom(expansionZoom);
                                         mapInstance.panTo({ lat: latitude, lng: longitude });
@@ -155,9 +154,9 @@ const MapView = () => {
                             key={ `point-${ cluster.properties.pointId }` }
                             lat={ latitude }
                             lng={ longitude }
-                            clientName={ cluster.properties.client_name }
-                            clientDbRef={ cluster.properties.client_db_ref }
-                            motive={ cluster.properties.motive_text }
+                            clientName={ cluster.properties.name }
+                            clientDbRef={ cluster.properties.uid }
+                            motive={ cluster.properties.motive }
                         />
                     );
                 }) }
@@ -182,7 +181,7 @@ const MapView = () => {
                         {
                             (filterResult.length > 0 ? filterResult : result).map(area => (
                                 <div className="list-item"
-                                     key={ `item-${ area.id }` }>{ area.client_name } - { area.client_db_ref }</div>
+                                     key={ `item-${ area.id }` }>{ area.client_name } - { area.client_db_ref } - { area.activity_name }</div>
                             ))
                         }
                     </div>
@@ -192,4 +191,4 @@ const MapView = () => {
     )
 };
 
-export default MapView
+export default MapView;

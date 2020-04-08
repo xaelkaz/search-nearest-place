@@ -15,7 +15,47 @@ $K_SIZE: 40px;
 $I_SIZE: 20px;
 
 .sale-marker,
-.sale-marker--hover{
+.sale-marker--hover {
+  position: absolute;
+  width: $K_SIZE;
+  height: $K_SIZE;
+  left: -$K_SIZE / 2;
+  top: -$K_SIZE / 2;
+  display: grid;
+  place-content: center;
+  border-radius: $K_SIZE;
+  background-color: rgba($color: lighten($color: $green, $amount: 10), $alpha: 0.5);
+  text-align: center;
+  color: #3f51b5;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 4px;
+  cursor: pointer;
+
+  & > .marker-indicator {
+    width: $I_SIZE;
+    height: $I_SIZE;
+    border-radius: $I_SIZE;
+    background-color: rgba($color: darken($color: $green, $amount: 5), $alpha: 0.8);
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease;
+    // pointer-events: none;
+    // z-index: -1;
+  }
+}
+
+.sale-marker--hover {
+  & > .marker-indicator {
+    transition: transform 0.2s ease;
+    transform: scale(1.5) !important;
+    background-color: $green;
+  }
+}
+
+
+.no-sale-marker,
+.no-sale-marker--hover {
   position: absolute;
   width: $K_SIZE;
   height: $K_SIZE;
@@ -32,11 +72,11 @@ $I_SIZE: 20px;
   padding: 4px;
   cursor: pointer;
 
-  & > .marker-indicator{
+  & > .marker-indicator {
     width: $I_SIZE;
     height: $I_SIZE;
     border-radius: $I_SIZE;
-    background-color: rgba($color:darken($color: $red, $amount: 5), $alpha: 0.8);
+    background-color: rgba($color: darken($color: $red, $amount: 5), $alpha: 0.8);
     display: block;
     transform-origin: center center;
     transition: transform 0.3s ease;
@@ -45,15 +85,15 @@ $I_SIZE: 20px;
   }
 }
 
-.sale-marker--hover{
-  & > .marker-indicator{
+.no-sale-marker--hover {
+  & > .marker-indicator {
     transition: transform 0.2s ease;
     transform: scale(1.5) !important;
     background-color: $red;
   }
 }
 
-.sale-marker-info-wrapper{
+.sale-marker-info-wrapper {
   position: absolute;
   left: -105px;
   top: calc(-100% - 70px);
@@ -67,22 +107,36 @@ $I_SIZE: 20px;
   text-align: left;
   z-index: 2;
 
-  & > .sale-marker-title{
+  & > .sale-marker-title {
     color: $gray;
     font-size: 12px;
+    margin: 7px 0 11px 0;
     display: block;
   }
 
-  & > .sale-marker-schedule{
+  & > .sale-marker-schedule {
     color: $gray;
     font-size: 11px;
     margin: 7px 0 11px 0;
     font-weight: 100;
 
-    & > svg{
+    & > svg {
       height: 12px;
       width: 12px;
       margin: 0 10px;
+    }
+  }
+
+  & > .place-marker-redirect-link {
+    color: #7fb4dd;
+    font-size: 14px;
+    margin: 0 0 11px 0;
+    text-transform: uppercase;
+    display: block;
+    position: relative;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
