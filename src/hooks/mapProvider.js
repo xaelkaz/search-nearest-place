@@ -1,6 +1,7 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useRef, useState } from "react";
 import clientJsonData from "../assets/data/clientJsonExtra"
 import _ from "lodash"
+import useSupercluster from "use-supercluster";
 
 const initialState = {};
 const store = createContext(initialState);
@@ -19,11 +20,42 @@ const MapProvider = (props) => {
 
         const [ query, setQuery ] = useState("");
 
+        const mapRef = useRef();
+        const [ bounds, setBounds ] = useState(null);
+        const [ zoom, setZoom ] = useState(10);
+
         const apiHasLoaded = (map, maps) => {
             setMapInstance(map);
             setMapApi(maps);
             setMapApiLoaded(true);
         };
+
+        const clientData = filterResult.length > 0 ? filterResult : result;
+
+        const points = clientData.map(point => ({
+            type: "Feature",
+            properties: {
+                cluster: false,
+                pointId: point.id,
+                category: point.activity_name,
+                name: point.client_name,
+                uid: point.client_db_ref
+            },
+            geometry: {
+                type: "Point",
+                coordinates: [
+                    parseFloat(point.longitude),
+                    parseFloat(point.latitude)
+                ]
+            }
+        }));
+
+        const { clusters, supercluster } = useSupercluster({
+            points,
+            bounds,
+            zoom,
+            options: { radius: 50, maxZoom: 17 }
+        });
 
         async function fetchData(url) {
             return await JSON.parse(JSON.stringify(url));
@@ -45,6 +77,13 @@ const MapProvider = (props) => {
             setQuery(query);
             const filter = result.filter(area => area.client_name.match(new RegExp(`.*${ query }.*`, 'gi')));
             setFilterResult(filter)
+        };
+
+        const setZoomProvider = (zoom) => {
+            setZoom(zoom)
+        };
+        const setBoundsProvider = (bounds) => {
+            setBounds(bounds)
         };
 
         const onChildClick = (key, childProps) => {
@@ -70,11 +109,17 @@ const MapProvider = (props) => {
                 onChildMouseEnter,
                 onChildMouseLeave,
                 onChildClick,
+                setZoomProvider,
+                setBoundsProvider,
                 mapApiLoaded,
                 mapInstance,
                 hoverPlaceKey,
                 mapApi,
-                query
+                query,
+                clusters,
+                supercluster,
+                zoom,
+                points
             } }>{ props.children }</Provider>
         )
     }

@@ -7,6 +7,7 @@ import { mapStyles } from "./mapStyle";
 import _ from "lodash";
 import MarkerMapSale from "../../components/map/points/MarkerMapSale";
 
+const Marker = ({ children }) => children;
 
 const MapView = () => {
 
@@ -21,8 +22,12 @@ const MapView = () => {
         mapInstance,
         mapApi,
         query,
-        onChildClick,
-        hoverPlaceKey
+        setZoomProvider,
+        setBoundsProvider,
+        clusters,
+        supercluster,
+        points,
+        zoom
     } = useContext(store);
 
     const defaultProps = {
@@ -88,44 +93,74 @@ const MapView = () => {
             <GoogleMapReact
                 bootstrapURLKeys={ { key: 'AIzaSyB5rtdt0SYpcBBr0czE96PvkEzt8yw-XG0' } }
                 yesIWantToUseGoogleMapApiInternals
-                defaultCenter={ mapApiLoaded ? apiIsLoaded(mapInstance, mapApi, clientData) :
+                defaultCenter={ mapApiLoaded && query.length > 0 ? apiIsLoaded(mapInstance, mapApi, clientData) :
                     [ reduceLatitude / clientData.length, reduceLongitude / clientData.length ] }
                 zoom={ defaultProps.zoom }
                 layerTypes={ [] }
                 options={ { styles: mapStyles } }
+                onChange={ ({ zoom, bounds }) => {
+                    setZoomProvider(zoom);
+                    setBoundsProvider([
+                        bounds.nw.lng,
+                        bounds.se.lat,
+                        bounds.se.lng,
+                        bounds.nw.lat
+                    ]);
+                } }
                 onGoogleApiLoaded={ ({ map, maps }) => {
                     map.setOptions({
-                        maxZoom: 17,
+                        maxZoom: 18,
                         minZoom: defaultProps.zoom
                     });
                     apiHasLoaded(map, maps)
                 } }>
-                { clientData.map((point => {
-                    if (point.motive_text == null) {
+                { clusters.map(cluster => {
+                    const [ longitude, latitude ] = cluster.geometry.coordinates;
+                    const {
+                        cluster: isCluster,
+                        point_count: pointCount
+                    } = cluster.properties;
+
+                    if (isCluster) {
                         return (
-                            <MarkerMapSale
-                                key={ point.id }
-                                lat={ point.latitude }
-                                lng={ point.longitude }
-                                clientName={ point.client_name }
-                                clientDbRef={ point.client_db_ref }
-                                motive={ point.motive_text }
-                            />
-                        )
-                    } else {
-                        return <MapPoint
-                            key={ point.id }
-                            lat={ parseFloat(point.latitude) }
-                            lng={ parseFloat(point.longitude) }
-                            text={ "Point 1" }
-                            name="My Marker"
-                            color="green"
-                        />
+                            <Marker
+                                key={ `cluster-${ cluster.id }` }
+                                lat={ latitude }
+                                lng={ longitude }
+                            >
+                                <div
+                                    className="cluster-marker"
+                                    style={ {
+                                        width: `${ 50 + (pointCount / points.length) * 20 }px`,
+                                        height: `${ 50 + (pointCount / points.length) * 20 }px`
+                                    } }
+                                    onClick={ () => {
+                                        console.log('CLICK', cluster)
+                                        const expansionZoom = Math.min(
+                                            supercluster.getClusterExpansionZoom(cluster.id),
+                                            18
+                                        );
+                                        mapInstance.setZoom(expansionZoom);
+                                        mapInstance.panTo({ lat: latitude, lng: longitude });
+                                    } }
+                                >
+                                    { pointCount }
+                                </div>
+                            </Marker>
+                        );
                     }
 
-                }))
-
-                }
+                    return (
+                        <MarkerMapSale
+                            key={ `point-${ cluster.properties.pointId }` }
+                            lat={ latitude }
+                            lng={ longitude }
+                            clientName={ cluster.properties.client_name }
+                            clientDbRef={ cluster.properties.client_db_ref }
+                            motive={ cluster.properties.motive_text }
+                        />
+                    );
+                }) }
             </GoogleMapReact>
             <ListOverMap>
                 <div>
