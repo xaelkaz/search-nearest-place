@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
     "@react-google-maps/api": "^1.8.6",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -15,11 +16,12 @@
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
+    "react-bootstrap-icons": "^1.0.1-alpha3",
     "react-dom": "^16.13.1",
     "react-feather": "^2.0.4",
     "react-scripts": "3.4.1",
-    "use-supercluster": "^0.2.6",
-    "supercluster": "^7.0.0"
+    "supercluster": "^7.0.0",
+    "use-supercluster": "^0.2.6"
   },
   "scripts": {
     "start": "react-scripts start",

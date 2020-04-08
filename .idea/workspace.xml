@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3b6be70-0221-40e7-9bc1-6f6ba6f0e147" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/map/points/cluster/MarkerMapCluster.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/map/points/MapPoint.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/single/MapPoint.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/map/points/MarkerMap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/MarkerMap.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/map/points/MarkerMapMotive.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/single/MarkerMapMotive.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/map/points/MarkerMapSale.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/single/MarkerMapSale.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/map/MapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/MapView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stylesheets/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,16 +50,16 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components/map/points" />
-      <recent name="$PROJECT_DIR$/src/component/map" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src/components/map/points" />
       <recent name="$PROJECT_DIR$/src/components/map/points/single/cluster" />
       <recent name="$PROJECT_DIR$/src/components/map/points/single" />
-      <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src/containers/map" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/map/points" />
+      <recent name="$PROJECT_DIR$/src/component/map" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -77,6 +76,7 @@
       <workItem from="1586186197974" duration="9607000" />
       <workItem from="1586204471133" duration="8373000" />
       <workItem from="1586349301375" duration="10366000" />
+      <workItem from="1586375044358" duration="2725000" />
     </task>
     <servers />
   </component>
@@ -126,24 +126,12 @@
     </state>
     <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586273536936" />
     <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1586366293018" />
-    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup" timestamp="1586367389551">
+    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup" timestamp="1586377437425">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586279498752" />
+    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586377437425" />
     <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1586367389551" />
     <state x="2065" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586192795384" />
     <state x="469" y="203" width="670" height="519" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1586203531486" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/containers/map/MapView.js</url>
-          <line>132</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

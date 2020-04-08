@@ -8,6 +8,8 @@ import _ from "lodash";
 import MarkerMapSale from "../../components/map/points/single/MarkerMapSale";
 import MarkerMapMotive from "../../components/map/points/single/MarkerMapMotive";
 import MarkerMapCluster from "../../components/map/points/cluster/MarkerMapCluster";
+import { CheckCircle, DashCircleFill, PersonCheck, PersonCheckFill } from "react-bootstrap-icons";
+import PlusCircleFill from "react-bootstrap-icons/dist/icons/plus-circle-fill";
 
 const Marker = ({ children }) => children;
 
@@ -96,6 +98,16 @@ const MapView = () => {
         e.preventDefault()
     };
 
+    function renderIcon(motive) {
+        if (motive != null) {
+            return <DashCircleFill style={ { marginRight: 5 } } color={ "#D32F2F" } size={ 25 }/>
+
+        }
+        return <CheckCircle style={ { marginRight: 5 } } color={ "#4CAF50" }
+                               size={ 25 }/>
+
+    }
+
     return (
         <div style={ { height: '100vh', width: '100%' } }>
             <GoogleMapReact
@@ -170,7 +182,7 @@ const MapView = () => {
             </GoogleMapReact>
             <ListOverMap>
                 <div>
-                    <div className="input-group input-group-sm mb-3">
+                    <div className="ui search input-group input-group-sm mb-3">
                         <input
                             onChange={ updateQuery }
                             placeholder="Buscar por cliente"
@@ -180,6 +192,7 @@ const MapView = () => {
                             style={ {
                                 width: 'calc(100% - 2rem)',
                                 margin: '1rem 1rem 0rem 1rem',
+                                borderRadius: 20,
                             } }
                             value={ query }
                             aria-label="Small"
@@ -189,7 +202,16 @@ const MapView = () => {
                         {
                             (filterResult.length > 0 ? filterResult : result).map(area => (
                                 <div className="list-item"
-                                     key={ `item-${ area.id }` }>{ area.client_name } - { area.client_db_ref } - { area.activity_name }</div>
+                                     style={ {
+                                         paddingLeft: 20,
+                                         paddingBottom: 10
+                                     } }
+                                     key={ `item-${ area.id }` }>
+                                    {
+                                        renderIcon(area.motive_text)
+                                    }
+                                    { area.client_name } - { area.client_db_ref } - { area.activity_name }
+                                </div>
                             ))
                         }
                     </div>
