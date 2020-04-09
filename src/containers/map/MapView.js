@@ -10,6 +10,8 @@ import _ from "lodash"
 
 const Marker = ({ children }) => children;
 
+const GOOGLE_MAP_API = process.env.REACT_APP_GOOGLE_MAP_API;
+
 const MapView = () => {
 
     const {
@@ -106,7 +108,7 @@ const MapView = () => {
     return (
         <div style={ { height: '100vh', width: '100%' } }>
             <GoogleMapReact
-                bootstrapURLKeys={ { key: 'AIzaSyB5rtdt0SYpcBBr0czE96PvkEzt8yw-XG0' } }
+                bootstrapURLKeys={ { key: GOOGLE_MAP_API } }
                 onGoogleApiLoaded={ ({ map, maps }) => {
                     map.setOptions({
                         maxZoom: defaultProps.maxZoom,
