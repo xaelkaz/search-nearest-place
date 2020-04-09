@@ -1,5 +1,5 @@
 ### STAGE 1: Build ###
-FROM node as build
+FROM node:alpine as build
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
@@ -18,8 +18,6 @@ COPY nginx/nginx.conf /etc/nginx/conf.d
 
 COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
-
-EXPOSE 3000
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
