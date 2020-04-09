@@ -41,8 +41,8 @@ const MapProvider = (props) => {
                 cluster: false,
                 pointId: point.id,
                 "category": point.activity_name,
-                "name": point.client_name,
-                "uid": point.client_db_ref,
+                "client_name": point.client_name,
+                "client_db_ref": point.client_db_ref,
                 "motive": point.motive_text
             },
             geometry: {
@@ -107,8 +107,8 @@ const MapProvider = (props) => {
 
         const onChildClick = (event, childProps) => {
             event.preventDefault();
-            setQuery(childProps.clientName);
-            const filter = result.filter(area => area.client_db_ref.match(new RegExp(`.*${ childProps.clientDbRef }.*`, 'gi')));
+            setQuery(childProps.client_name);
+            const filter = result.filter(area => area.client_db_ref.match(new RegExp(`.*${ childProps.client_db_ref }.*`, 'gi')));
             setFilterResult(filter);
         };
 
