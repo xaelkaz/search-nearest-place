@@ -1,0 +1,662 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  margin: 0;
+  font-family: Archia, Arch, sans-serif;
+}
+
+@font-face {
+  font-family: 'Archia';
+  src: url('../fonts/Archia/archia-thin-webfont.eot');
+  src: url('../fonts/Archia/archia-thin-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Archia/archia-thin-webfont.woff2') format('woff2'),
+  url('../fonts/Archia/archia-thin-webfont.woff') format('woff'),
+  url('../fonts/Archia/archia-thin-webfont.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Archia';
+  src: url('../fonts/Archia/archia-light-webfont.eot');
+  src: url('../fonts/Archia/archia-light-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Archia/archia-light-webfont.woff2') format('woff2'),
+  url('../fonts/Archia/archia-light-webfont.woff') format('woff'),
+  url('../fonts/Archia/archia-light-webfont.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Archia';
+  src: url('../fonts/Archia/archia-regular-webfont.eot');
+  src: url('../fonts/Archia/archia-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Archia/archia-regular-webfont.woff2') format('woff2'),
+  url('../fonts/Archia/archia-regular-webfont.woff') format('woff'),
+  url('../fonts/Archia/archia-regular-webfont.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Archia';
+  src: url('../fonts/Archia/archia-medium-webfont.eot');
+  src: url('../fonts/Archia/archia-medium-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Archia/archia-medium-webfont.woff2') format('woff2'),
+  url('../fonts/Archia/archia-medium-webfont.woff') format('woff'),
+  url('../fonts/Archia/archia-medium-webfont.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Archia';
+  src: url('../fonts/Archia/archia-semibold-webfont.eot');
+  src: url('../fonts/Archia/archia-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Archia/archia-semibold-webfont.woff2') format('woff2'),
+  url('../fonts/Archia/archia-semibold-webfont.woff') format('woff'),
+  url('../fonts/Archia/archia-semibold-webfont.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Archia';
+  src: url('../fonts/Archia/archia-bold-webfont.eot');
+  src: url('../fonts/Archia/archia-bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Archia/archia-bold-webfont.woff2') format('woff2'),
+  url('../fonts/Archia/archia-bold-webfont.woff') format('woff'),
+  url('../fonts/Archia/archia-bold-webfont.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Color Pallete */
+
+$blue: #007bff;
+$blue-light: #007bff10;
+$blue-hover: #007bff30;
+$blue-light-opaque: #eff7ff;
+$blue-mid: #007bff99;
+$pblue: #4c75f2;
+$pblue-light: #4c75f210;
+$pblue-hover: #4c75f230;
+$pblue-light-opaque: #eff7ff;
+$pblue-mid: #4c75f299;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$cherry: #ff073a;
+$cherry-mid: #ff073a99;
+$cherry-light: #ff073a20;
+$cherry-hover: #ff073a30;
+$cherry-light-opaque: #ffe0e6;
+$red: #dc3545;
+$red-light: #dc354520;
+$red-mid: #dc354599;
+$orange: #fd7e14;
+$orange-mid: #fd7e1499;
+$orange-light: #fd7e1420;
+$orange-hover: #fd7e1430;
+$orange-light-opaque: #ffefe2;
+$yellow: #ffc107;
+$yellow-light: #ffc10720;
+$yellow-hover: #ffc10730;
+$yellow-mid: #ffc10799;
+$yellow-light-opaque: #fff7e0;
+$green: #28a745;
+$green-light: #28a74520;
+$green-hover: #28a74530;
+$green-mid: #28a74599;
+$teal: #20c997;
+$cyan: #17a2b8;
+$white: #fff;
+$gray: #6c757d;
+$gray-light: #6c757d10;
+$gray-light-opaque: #f6f6f7;
+$gray-hover: #6c757d20;
+$gray-mid: #6c757d99;
+$gray-dark: #343a40;
+$gray-opaque: #f1f1f1;
+$primary: #007bff;
+$secondary: #6c757d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+$purple: #201aa2dd;
+$purple-light: #201aa220;
+$purple-hover: #201aa230;
+$purple-mid: #201aa299;
+$purple-light-opaque: #e3e2f3;
+$pink: #fb5581;
+$pink-light: #ffa8cb10;
+$pink-hover: #ffa8cb30;
+$pink-mid: #ffa8cb99;
+
+.pin {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  background: #00cae9;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -20px 0 0 -20px;
+}
+
+.pin:after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  margin: 8px 0 0 8px;
+  background: #e6e6e6;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.bounce {
+  animation-name: bounce;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+.pulse {
+  background: #d6d4d4;
+  border-radius: 50%;
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 11px 0px 0px -12px;
+  transform: rotateX(55deg);
+  z-index: -2;
+}
+
+.pulse:after {
+  content: "";
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  margin: -13px 0 0 -13px;
+  animation: pulsate 1s ease-out;
+  animation-iteration-count: infinite;
+  opacity: 0;
+  box-shadow: 0 0 1px 2px #00cae9;
+  animation-delay: 1.1s;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(0.1, 0.1);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.2, 1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px) rotate(-45deg);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(30px) rotate(-45deg);
+  }
+
+  80% {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+}
+
+.list-over-map {
+  position: absolute;
+  top: 5%;
+  left: 2%;
+  width: 25%;
+  height: 90%;
+  max-height: 90%;
+
+  overflow-y: auto;
+
+  margin: 0;
+  padding: 0;
+
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  border-radius: 0.3rem;
+
+  -webkit-box-shadow: 0 2px 4px 1px #b7b7b7;
+  -moz-box-shadow: 0 2px 4px 1px #b7b7b7;
+  box-shadow: 0 2px 4px 1px #b7b7b7;
+
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.list-over-map:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.list-over-map .list-item {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  margin: 0;
+  padding: 0.5rem;
+
+  cursor: pointer;
+  font-size: small;
+  font-weight: 400;
+}
+
+.list-over-map .list-item:hover {
+  background: #e9e9e9;
+}
+
+.clear-input > span {
+  position: absolute;
+  right: 24px;
+  top: 20px;
+  height: 14px;
+  margin: auto;
+  font-size: 14px;
+  cursor: pointer;
+  color: #AAA;
+  z-index: 100;
+}
+
+.truncate {
+  text-overflow: ellipsis;
+  /*BOTH of the following are required for text-overflow (overflow: hidden; and white-space: nowrap;)*/
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.map-stats {
+  .stats {
+    .timestamp {
+      width: 4.5rem;
+    }
+  }
+}
+
+.stats {
+  background: $cherry-light;
+  position: relative;
+  color: $cherry;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0.5rem;
+  flex: 1;
+  padding: 0.25rem;
+
+  .stats-bottom {
+    display: flex;
+    flex-direction: row;
+
+    h6 {
+      margin-top: auto;
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  h1 {
+    font-weight: 600;
+  }
+
+  &.is-green {
+    background: $green-light;
+
+    h5,
+    h6 {
+      color: $green-mid;
+    }
+
+    h1 {
+      color: $green;
+    }
+  }
+
+  &.is-blue {
+    background: $blue-light;
+
+    h5,
+    h6 {
+      color: $blue-mid;
+    }
+
+    h1 {
+      color: $blue;
+    }
+  }
+
+  &.is-gray {
+    background: $gray-light;
+
+    h5,
+    h6 {
+      color: $gray-mid;
+    }
+
+    h1 {
+      color: $gray;
+    }
+  }
+
+  &.is-yellow {
+    background: $warning;
+
+    h5,
+    h6 {
+      color: $white;
+    }
+
+    h1 {
+      color: $white;
+    }
+  }
+
+  &.is-purple {
+    background: $purple-light;
+    padding-right: 1rem;
+
+    h5,
+    h6 {
+      color: $purple-mid;
+
+      &.timestamp {
+        margin: 0;
+        font-weight: 900;
+      }
+    }
+
+    h1 {
+      color: $purple;
+    }
+
+    svg {
+      position: absolute;
+      right: 0.35rem;
+      top: 0;
+      stroke-width: 3;
+      width: 12px;
+      stroke: $purple-mid;
+      cursor: pointer;
+      transition: stroke 0.2s ease-in-out;
+
+      &:hover {
+        stroke: $purple;
+      }
+    }
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.MapExplorer {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 30rem;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    color: $gray;
+    margin-bottom: 2.5rem;
+    align-self: flex-start;
+
+    h1 {
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  .svg-parent {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 1rem;
+
+    svg {
+      align-self: center;
+
+      text {
+        text-transform: uppercase;
+        text-align: right;
+        font-family: 'archia';
+        font-weight: 600;
+        fill: $gray;
+        font-size: 10px;
+      }
+    }
+  }
+
+  .back-button {
+    position: absolute;
+    right: 0;
+    background: $orange-light;
+    color: $orange;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background: $orange-hover;
+    }
+  }
+
+  .meta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 1rem;
+
+    .district-last-update {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+    h2 {
+      margin: 0;
+      color: #e23028;
+      word-wrap: break-word;
+      font-weight: 900;
+    }
+
+    h4 {
+      margin: 0;
+      color: $gray-mid;
+      word-wrap: break-word;
+    }
+
+    .district-confirmed {
+      color: #e23028;
+      position: absolute;
+      top: 3rem;
+      width: 5rem;
+    }
+
+    .unknown {
+      position: absolute;
+      top: 5rem;
+      width: 5rem;
+    }
+  }
+
+  .map-stats {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    height: 100%;
+    padding: 5px;
+    position: relative;
+
+    h1,
+    h5,
+    h6,
+    h3 {
+      margin: 0;
+    }
+
+    h3 {
+      color: $gray-mid;
+      font-weight: 900;
+    }
+
+    .stats {
+      background: $cherry-light;
+      position: relative;
+      color: $cherry;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      margin-left: 0.25rem;
+      margin-right: 0.25rem;
+      margin-bottom: 0.5rem;
+      flex: 1;
+      padding: 0.25rem;
+
+      .stats-bottom {
+        display: flex;
+        flex-direction: row;
+
+        h6 {
+          margin-top: auto;
+          margin-bottom: 0.25rem;
+        }
+      }
+
+      h1 {
+        font-weight: 600;
+      }
+
+      &.is-green {
+        background: $green-light;
+
+        h5,
+        h6 {
+          color: $green-mid;
+        }
+
+        h1 {
+          color: $green;
+        }
+      }
+
+      &.is-blue {
+        background: $blue-light;
+
+        h5,
+        h6 {
+          color: $blue-mid;
+        }
+
+        h1 {
+          color: $blue;
+        }
+      }
+
+      &.is-gray {
+        background: $gray-light;
+
+        h5,
+        h6 {
+          color: $gray-mid;
+        }
+
+        h1 {
+          color: $gray;
+        }
+      }
+
+      &.is-yellow {
+        background: $warning;
+
+        h5,
+        h6 {
+          color: $white;
+        }
+
+        h1 {
+          color: $white;
+        }
+      }
+
+      &.is-purple {
+        background: $purple-light;
+        padding-right: 1rem;
+
+        h5,
+        h6 {
+          color: $purple-mid;
+
+          &.timestamp {
+            margin: 0;
+            font-weight: 900;
+          }
+        }
+
+        h1 {
+          color: $purple;
+        }
+
+        svg {
+          position: absolute;
+          right: 0.35rem;
+          top: 0;
+          stroke-width: 3;
+          width: 12px;
+          stroke: $purple-mid;
+          cursor: pointer;
+          transition: stroke 0.2s ease-in-out;
+
+          &:hover {
+            stroke: $purple;
+          }
+        }
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+

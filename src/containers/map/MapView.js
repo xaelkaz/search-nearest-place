@@ -6,6 +6,7 @@ import { mapStyles } from "./mapStyle";
 import MarkerMapSale from "../../components/map/points/single/MarkerMapSale";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import _ from "lodash"
 
 const Marker = ({ children }) => children;
 
@@ -177,6 +178,26 @@ const MapView = () => {
                 }) }
             </GoogleMapReact>
             <ListOverMap>
+                <div className="MapExplorer fadeInUp" style={ { animationDelay: '1.5s' } }>
+
+                    <div className="map-stats">
+                        <div className="stats is-green fadeInUp" style={ { animationDelay: '2s' } }>
+                            <h5>{ window.innerWidth <= 769 ? 'Vent.' : 'Ventas' }</h5>
+                            <div className="stats-bottom">
+                                <h1 style={ { paddingLeft: 5 } }>{ _.filter(result, { 'activity_name': "VENTA" }).length }</h1>
+                            </div>
+                        </div>
+                        <div
+                            className="stats is-red fadeInUp"
+                            style={ { animationDelay: '2.1s' } }
+                        >
+                            <h5>{ window.innerWidth <= 769 ? 'No Vent.' : 'Reportes' }</h5>
+                            <div className="stats-bottom">
+                                <h1 style={ { paddingLeft: 5 } }>{ _.filter(result, { 'activity_name': "NO VENTA" }).length }</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div>
                     <div className="input-group input-group-sm mb-3 clear-input">
                         <input
