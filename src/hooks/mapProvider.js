@@ -105,9 +105,10 @@ const MapProvider = (props) => {
             setBounds(bounds)
         };
 
-        const onChildClick = (key, childProps) => {
-            setQuery(childProps.client_name);
-            const filter = result.filter(area => area.client_db_ref.match(new RegExp(`.*${ childProps.client_db_ref }.*`, 'gi')));
+        const onChildClick = (event, childProps) => {
+            event.preventDefault();
+            setQuery(childProps.clientName);
+            const filter = result.filter(area => area.client_db_ref.match(new RegExp(`.*${ childProps.clientDbRef }.*`, 'gi')));
             setFilterResult(filter);
         };
 

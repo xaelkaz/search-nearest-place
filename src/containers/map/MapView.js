@@ -152,7 +152,7 @@ const MapView = () => {
                                     onClick={ () => {
                                         const expansionZoom = Math.min(
                                             supercluster.getClusterExpansionZoom(cluster.id),
-                                            15
+                                            17
                                         );
                                         mapInstance.setZoom(expansionZoom);
                                         mapInstance.panTo({ lat: latitude, lng: longitude });
@@ -169,6 +169,7 @@ const MapView = () => {
                             key={ `point-${ cluster.properties.pointId }` }
                             lat={ latitude }
                             lng={ longitude }
+                            mapInstance={mapInstance}
                             clientName={ cluster.properties.name }
                             clientDbRef={ cluster.properties.uid }
                             motive={ cluster.properties.motive }

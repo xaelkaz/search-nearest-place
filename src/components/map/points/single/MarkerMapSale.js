@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import clx from "classnames";
 import { motion, AnimatePresence } from "framer-motion";
 import "../MarkerMap.scss";
+import { store } from "../../../../hooks/mapProvider";
 
 export default function MarkerMapSale(props) {
+    const {
+        onChildClick
+    } = useContext(store);
+
     if (props.motive === null) {
         return (
-            <div className={ clx("sale-marker", { "sale-marker--hover": props.hover || props.$hover }) }>
+            <div className={ clx("sale-marker", { "sale-marker--hover": props.hover || props.$hover }) }
+                 onClick={ (event => {
+                     onChildClick(event, props);
+                     props.mapInstance.setZoom(15);
+                     props.mapInstance.panTo({ lat: props.lat, lng: props.lng });
+                 }) }>
                 <AnimatePresence exitBeforeEnter>
                     { (props.$hover || props.hover) && <MarkerInfoSale { ...props } /> }
                 </AnimatePresence>
@@ -15,7 +25,12 @@ export default function MarkerMapSale(props) {
         );
     } else {
         return (
-            <div className={ clx("no-sale-marker", { "no-sale-marker--hover": props.hover || props.$hover }) }>
+            <div className={ clx("no-sale-marker", { "no-sale-marker--hover": props.hover || props.$hover }) }
+                 onClick={ (event => {
+                     onChildClick(event, props);
+                     props.mapInstance.setZoom(15);
+                     props.mapInstance.panTo({ lat: props.lat, lng: props.lng });
+                 }) }>
                 <AnimatePresence exitBeforeEnter>
                     { (props.$hover || props.hover) && <MarkerInfoNoSale { ...props } /> }
                 </AnimatePresence>
@@ -72,11 +87,11 @@ export function MarkerInfoNoSale({ clientName, clientDbRef, motive }) {
         <motion.div variants={ markerVariants } initial="hidden" animate="visible" exit="exit"
                     className="sale-marker-info-wrapper">
             <motion.div className="place-marker-redirect-link"> NO VENTA</motion.div>
-            <motion.div className="sale-marker-title"><span style={ { fontWeight: 700 } }>CLIENTE:</span> { clientName }
+            <motion.div className="sale-marker-title"><span
+                style={ { fontWeight: 700 } }>CLIENTE:</span> { clientName } - { clientDbRef }
             </motion.div>
             <motion.div className="sale-marker-title">MOTIVO: { motive }
             </motion.div>
-            <motion.div className="sale-marker-schedule"> CODIGO: { clientDbRef }</motion.div>
         </motion.div>
     );
 }
