@@ -86,11 +86,10 @@ const MapView = () => {
         )
     }
 
-    const resetZoomCenter = () => {
-        if (mapApiLoaded && query.length > 0) {
+    const resetZoomCenter = (event) => {
+        if (mapApiLoaded) {
+            updateQuery(event, true);
             return apiIsLoaded(mapInstance, mapApi, result)
-        } else {
-            return reduceCenter
         }
     };
 
@@ -100,11 +99,9 @@ const MapView = () => {
 
     function renderIcon(motive) {
         if (motive != null) {
-            return <FontAwesomeIcon icon={ faTimesCircle } style={ { marginRight: 5} } color={ "#D32F2F" } size="lg" />
+            return <FontAwesomeIcon icon={ faTimesCircle } style={ { marginRight: 5 } } color={ "#D32F2F" } size="lg"/>
         }
-        return <FontAwesomeIcon icon={ faCheckCircle } style={ { marginRight: 5 } } color={ "#4CAF50" } size="lg" />
-
-
+        return <FontAwesomeIcon icon={ faCheckCircle } style={ { marginRight: 5 } } color={ "#4CAF50" } size="lg"/>
     }
 
     return (
@@ -121,7 +118,7 @@ const MapView = () => {
                 yesIWantToUseGoogleMapApiInternals
                 zoom={ defaultProps.zoom }
                 layerTypes={ [] }
-                center={ mapApiLoaded && filterResult.length > 0 ? apiIsLoaded(mapInstance, mapApi, clientData) : resetZoomCenter() }
+                center={ mapApiLoaded ? mapInstance.getCenter().toJSON() : reduceCenter }
                 options={ { styles: mapStyles } }
                 onChange={ ({ zoom, bounds }) => {
                     setZoomProvider(zoom);
@@ -197,7 +194,9 @@ const MapView = () => {
                             value={ query }
                             aria-label="Small"
                             aria-describedby="inputGroup-sizing-sm"/>
-                        <span><FontAwesomeIcon icon={ faTimesCircle }/></span>
+                        <span onClick={ (event => {
+                            resetZoomCenter(event)
+                        }) }><FontAwesomeIcon icon={ faTimesCircle }/></span>
 
                     </div>
                     <div>
@@ -217,7 +216,8 @@ const MapView = () => {
                                     {
                                         renderIcon(area.motive_text)
                                     }
-                                    <span style={{ fontWeight: 700}}>{ area.client_db_ref }</span> - { (area.client_name) }
+                                    <span
+                                        style={ { fontWeight: 700 } }>{ area.client_db_ref }</span> - { (area.client_name) }
                                 </div>
                             ))
                         }

@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a3b6be70-0221-40e7-9bc1-6f6ba6f0e147" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/map/points/single/MarkerMapSale.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/single/MarkerMapSale.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/map/MapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/MapView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/mapProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/mapProvider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,16 +47,16 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/map/points" />
+      <recent name="$PROJECT_DIR$/src/component/map" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src/components/map/points" />
       <recent name="$PROJECT_DIR$/src/components/map/points/single/cluster" />
       <recent name="$PROJECT_DIR$/src/components/map/points/single" />
       <recent name="$PROJECT_DIR$/src/containers/map" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components/map/points" />
-      <recent name="$PROJECT_DIR$/src/component/map" />
     </key>
   </component>
   <component name="SvnConfiguration">

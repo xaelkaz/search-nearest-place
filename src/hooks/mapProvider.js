@@ -86,12 +86,16 @@ const MapProvider = (props) => {
             });
         }, []);
 
-        const updateQuery = (event) => {
+        const clearQueryInput = () => {
+            setQuery("");
+        };
+
+        const updateQuery = (event, resetQuery = false) => {
             event.preventDefault();
             const query = event.target.value;
             const filter = result.filter(area => area.client_name.match(new RegExp(`.*${ query }.*`, 'gi')));
             setFilterResult(filter);
-            setQuery(query);
+            resetQuery ? clearQueryInput() : setQuery(query);
         };
 
         const setZoomProvider = (zoom) => {
@@ -105,10 +109,6 @@ const MapProvider = (props) => {
             setQuery(childProps.client_name);
             const filter = result.filter(area => area.client_db_ref.match(new RegExp(`.*${ childProps.client_db_ref }.*`, 'gi')));
             setFilterResult(filter);
-        };
-
-        const clearQueryInput = () => {
-            setQuery("");
         };
 
         const onChildMouseEnter = (event, childProps) => {
