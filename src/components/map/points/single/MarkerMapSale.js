@@ -74,9 +74,8 @@ export function MarkerInfoSale({ clientName, clientDbRef }) {
         <motion.div variants={ markerVariants } initial="hidden" animate="visible" exit="exit"
                     className="sale-marker-info-wrapper">
             <motion.div className="place-marker-redirect-link"> VENTA</motion.div>
-            <motion.div className="sale-marker-title"> CLIENTE: { clientName }
+            <motion.div className="sale-marker-title"> { clientName } - { clientDbRef }
             </motion.div>
-            <motion.div className="sale-marker-schedule"> CODIGO: { clientDbRef }</motion.div>
         </motion.div>
     );
 }
@@ -87,8 +86,7 @@ export function MarkerInfoNoSale({ clientName, clientDbRef, motive }) {
         <motion.div variants={ markerVariants } initial="hidden" animate="visible" exit="exit"
                     className="sale-marker-info-wrapper">
             <motion.div className="place-marker-redirect-link"> NO VENTA</motion.div>
-            <motion.div className="sale-marker-title"><span
-                style={ { fontWeight: 700 } }>CLIENTE:</span> { clientName } - { clientDbRef }
+            <motion.div className="sale-marker-title">{ clientName } - { clientDbRef }
             </motion.div>
             <motion.div className="sale-marker-title">MOTIVO: { motive }
             </motion.div>
