@@ -20,8 +20,6 @@ const MapProvider = (props) => {
 
         const [ query, setQuery ] = useState("");
 
-        const mapRef = useRef();
-
         const [ bounds, setBounds ] = useState(null);
         const [ zoom, setZoom ] = useState(10);
 
