@@ -69,24 +69,24 @@ const markerVariants = {
     }
 };
 
-export function MarkerInfoSale({ clientName, clientDbRef }) {
+export function MarkerInfoSale({ client_name, client_db_ref }) {
     return (
         <motion.div variants={ markerVariants } initial="hidden" animate="visible" exit="exit"
                     className="sale-marker-info-wrapper">
             <motion.div className="place-marker-redirect-link"> VENTA</motion.div>
-            <motion.div className="sale-marker-title"> { clientName } - { clientDbRef }
+            <motion.div className="sale-marker-title"> { client_name } - { client_db_ref }
             </motion.div>
         </motion.div>
     );
 }
 
-export function MarkerInfoNoSale({ clientName, clientDbRef, motive }) {
+export function MarkerInfoNoSale({ client_name, client_db_ref, motive }) {
 
     return (
         <motion.div variants={ markerVariants } initial="hidden" animate="visible" exit="exit"
                     className="sale-marker-info-wrapper">
             <motion.div className="place-marker-redirect-link"> NO VENTA</motion.div>
-            <motion.div className="sale-marker-title">{ clientName } - { clientDbRef }
+            <motion.div className="sale-marker-title">{ client_name } - { client_db_ref }
             </motion.div>
             <motion.div className="sale-marker-title">MOTIVO: { motive }
             </motion.div>

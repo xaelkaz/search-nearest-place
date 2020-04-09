@@ -1,13 +1,12 @@
 import GoogleMapReact from "google-map-react";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { store } from "../../hooks/mapProvider";
 import ListOverMap from "../../components/map/list-over-map/list-over-map";
 import { mapStyles } from "./mapStyle";
 import MarkerMapSale from "../../components/map/points/single/MarkerMapSale";
-import { CheckCircle, DashCircleFill, PersonCheck, PersonCheckFill, XCircleFill } from "react-bootstrap-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowCircleDown, faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-import { toCamelCaseString } from "../../utils/ToCamelCaseString";
+import { faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import _ from "lodash"
 
 const Marker = ({ children }) => children;
 
@@ -30,7 +29,7 @@ const MapView = () => {
         supercluster,
         points,
         reduceCenter,
-        clearQueryInput,
+        onChildClick,
         hoverPlaceKey
     } = useContext(store);
 
@@ -169,9 +168,9 @@ const MapView = () => {
                             key={ `point-${ cluster.properties.pointId }` }
                             lat={ latitude }
                             lng={ longitude }
-                            mapInstance={mapInstance}
-                            clientName={ cluster.properties.name }
-                            clientDbRef={ cluster.properties.uid }
+                            mapInstance={ mapInstance }
+                            client_name={ cluster.properties.client_name }
+                            client_db_ref={ cluster.properties.client_db_ref }
                             motive={ cluster.properties.motive }
                             hover={ hoverPlaceKey === `point-${ cluster.properties.pointId }` }
                         />
@@ -179,6 +178,26 @@ const MapView = () => {
                 }) }
             </GoogleMapReact>
             <ListOverMap>
+                <div className="MapExplorer fadeInUp" style={ { animationDelay: '1.5s' } }>
+
+                    <div className="map-stats">
+                        <div className="stats is-green fadeInUp" style={ { animationDelay: '2s' } }>
+                            <h5>{ window.innerWidth <= 769 ? 'Vent.' : 'Ventas' }</h5>
+                            <div className="stats-bottom">
+                                <h1 style={ { paddingLeft: 5 } }>{ _.filter(result, { 'activity_name': "VENTA" }).length }</h1>
+                            </div>
+                        </div>
+                        <div
+                            className="stats is-red fadeInUp"
+                            style={ { animationDelay: '2.1s' } }
+                        >
+                            <h5>{ window.innerWidth <= 769 ? 'No Vent.' : 'Reportes' }</h5>
+                            <div className="stats-bottom">
+                                <h1 style={ { paddingLeft: 5 } }>{ _.filter(result, { 'activity_name': "NO VENTA" }).length }</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div>
                     <div className="input-group input-group-sm mb-3 clear-input">
                         <input
@@ -210,6 +229,14 @@ const MapView = () => {
                                          overflow: 'hidden',
                                          textOverflow: 'ellipsis',
                                      } }
+                                     onClick={ (event => {
+                                         onChildClick(event, area);
+                                         mapInstance.setZoom(15);
+                                         mapInstance.panTo({
+                                             lat: parseFloat(area.latitude),
+                                             lng: parseFloat(area.longitude)
+                                         });
+                                     }) }
                                      key={ `point-${ area.id }` }
                                      onMouseEnter={ (event => (onChildMouseEnter(event, `point-${ area.id }`))) }
                                      onMouseLeave={ onChildMouseLeave }

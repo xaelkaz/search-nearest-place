@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import '../stylesheets/App.css';
+import '../stylesheets/App.scss';
 import MapView from "./map/MapView";
 import { MapProvider } from "../hooks/mapProvider";
 
