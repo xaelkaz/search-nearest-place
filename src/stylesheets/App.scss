@@ -280,8 +280,8 @@ $pink-mid: #ffa8cb99;
 
 .clear-input > span {
   position: absolute;
-  right: 24px;
-  top: 20px;
+  right: 10px;
+  top: 45px;
   height: 14px;
   margin: auto;
   font-size: 14px;
@@ -292,7 +292,6 @@ $pink-mid: #ffa8cb99;
 
 .truncate {
   text-overflow: ellipsis;
-  /*BOTH of the following are required for text-overflow (overflow: hidden; and white-space: nowrap;)*/
   overflow: hidden;
   white-space: nowrap;
 }

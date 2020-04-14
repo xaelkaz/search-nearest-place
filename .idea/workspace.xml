@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3b6be70-0221-40e7-9bc1-6f6ba6f0e147" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/map/MapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/MapView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/mapProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/mapProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stylesheets/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/App.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +47,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
@@ -78,7 +84,11 @@
       <workItem from="1586409661926" duration="1025000" />
       <workItem from="1586441302222" duration="1384000" />
       <workItem from="1586445219227" duration="659000" />
-      <workItem from="1586448009634" duration="6528000" />
+      <workItem from="1586448009634" duration="7040000" />
+      <workItem from="1586625433407" duration="61000" />
+      <workItem from="1586798356713" duration="3123000" />
+      <workItem from="1586804256372" duration="422000" />
+      <workItem from="1586820372676" duration="16648000" />
     </task>
     <servers />
   </component>
@@ -96,37 +106,41 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="454" y="250" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586456251154">
+    <state x="454" y="250" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586798458969">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="454" y="250" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586798458969" />
     <state x="454" y="250" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1586456251154" />
     <state x="524" y="240" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586455458853">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="524" y="240" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1586455458853" />
     <state x="2138" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586192343998" />
-    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1586374215129">
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1586826939863">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586276536982" />
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586826939863" />
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1586374215129" />
-    <state x="1909" y="190" key="SettingsEditor" timestamp="1586189630981">
-      <screen x="1440" y="23" width="1920" height="1057" />
-    </state>
-    <state x="1909" y="190" key="SettingsEditor/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586189630981" />
-    <state x="100" y="111" width="1240" height="679" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586373965619">
+    <state x="352" y="142" key="SettingsEditor" timestamp="1586800749761">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="352" y="142" key="SettingsEditor/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586800749761" />
+    <state x="1909" y="190" key="SettingsEditor/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586189630981" />
+    <state x="100" y="98" width="1240" height="754" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586830533329">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="100" y="98" width="1240" height="754" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586830533329" />
     <state x="100" y="111" width="1240" height="679" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1586373965619" />
+    <state x="100" y="111" width="1240" height="679" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.811/1440.23.1920.1057@0.23.1440.811" timestamp="1586801821728" />
     <state x="100" y="123" width="1240" height="611" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.811@0.23.1440.811" timestamp="1586203701631" />
     <state x="378" y="72" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586353636342">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="378" y="72" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1586353636342" />
-    <state x="502" y="369" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586268891101">
+    <state x="502" y="369" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586835669938">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="502" y="369" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586268891101" />
+    <state x="502" y="369" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586835669938" />
     <state x="0" y="0" width="1440" height="900" maximized="true" key="dock-window-1" timestamp="1586392411741">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -136,12 +150,35 @@
     </state>
     <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586378798209" />
     <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1586455181143" />
-    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup" timestamp="1586455244635">
+    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup" timestamp="1586836971558">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586381293548" />
-    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1586455244635" />
+    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586828565857" />
+    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1586836971558" />
     <state x="2065" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586192795384" />
     <state x="469" y="203" width="670" height="519" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1586203531486" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/containers/map/MapView.js</url>
+          <line>254</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/containers/App.js</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/containers/map/MapView.js</url>
+          <line>207</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,16 +1,23 @@
 import GoogleMapReact from "google-map-react";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { store } from "../../hooks/mapProvider";
-import ListOverMap from "../../components/map/list-over-map/list-over-map";
 import { mapStyles } from "./mapStyle";
 import MarkerMapSale from "../../components/map/points/single/MarkerMapSale";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-import _ from "lodash"
+import {
+    CollapseBtn, CollapseIconInput, CollapseInput, LabelVariants,
+    Menu,
+    MenuItem,
+    MenuLabel, SearchInputVariants,
+    Sidebar, SidebarVariants
+} from "../../stylesheets/styleContainer";
+import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
+import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons/faAngleDoubleLeft";
 
 const Marker = ({ children }) => children;
 
-const GOOGLE_MAP_API = process.env.REACT_APP_GOOGLE_MAP_API;
+const GOOGLE_MAP_API = 'AIzaSyB5rtdt0SYpcBBr0czE96PvkEzt8yw-XG0';
 
 const MapView = () => {
 
@@ -43,7 +50,11 @@ const MapView = () => {
         zoom: 10,
         maxZoom: 19
     };
+    const [ sidebarCollapsed, setSidebarCollapsed ] = useState(true);
 
+    const toggleSidebar = () => {
+        setSidebarCollapsed(!sidebarCollapsed);
+    };
     // Re-center map when resizing the window
     const bindResizeListener = (map, maps, bounds) => {
         maps.event.addDomListenerOnce(map, 'idle', () => {
@@ -179,81 +190,68 @@ const MapView = () => {
                     );
                 }) }
             </GoogleMapReact>
-            <ListOverMap>
-                <div className="MapExplorer fadeInUp" style={ { animationDelay: '1.5s' } }>
+            <Sidebar
+                initial={ sidebarCollapsed ? "collapsed" : "expanded" }
+                animate={ sidebarCollapsed ? "collapsed" : "expanded" }
+                variants={ SidebarVariants }>
+                <Menu>
 
-                    <div className="map-stats">
-                        <div className="stats is-green fadeInUp" style={ { animationDelay: '2s' } }>
-                            <h5>{ window.innerWidth <= 769 ? 'Vent.' : 'Ventas' }</h5>
-                            <div className="stats-bottom">
-                                <h1 style={ { paddingLeft: 5 } }>{ _.filter(result, { 'activity_name': "VENTA" }).length }</h1>
-                            </div>
-                        </div>
-                        <div
-                            className="stats is-red fadeInUp"
-                            style={ { animationDelay: '2.1s' } }
-                        >
-                            <h5>{ window.innerWidth <= 769 ? 'No Vent.' : 'Reportes' }</h5>
-                            <div className="stats-bottom">
-                                <h1 style={ { paddingLeft: 5 } }>{ _.filter(result, { 'activity_name': "NO VENTA" }).length }</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
+                    <CollapseBtn onClick={ () => toggleSidebar() }>
+                        { sidebarCollapsed ? <FontAwesomeIcon icon={ faBars } size="lg"/> :
+                            <FontAwesomeIcon icon={ faAngleDoubleLeft } size="lg"/> }
+                    </CollapseBtn>
                     <div className="input-group input-group-sm mb-3 clear-input">
-                        <input
+                        <CollapseInput
+                            initial={ sidebarCollapsed ? "collapsed" : "expanded" }
+                            animate={ sidebarCollapsed ? "collapsed" : "expanded" }
+                            variants={ LabelVariants }
                             onChange={ updateQuery }
                             placeholder="Buscar por cliente"
                             type="text"
                             onPaste={ onselectstart }
                             className="form-control"
-                            style={ {
-                                width: 'calc(100% - 2rem)',
-                                margin: '1rem 1rem 0rem 1rem',
-                                borderRadius: 20,
-                            } }
                             value={ query }
                             aria-label="Small"
                             aria-describedby="inputGroup-sizing-sm"/>
-                        <span onClick={ (event => {
-                            resetZoomCenter(event)
-                        }) }><FontAwesomeIcon icon={ faTimesCircle }/></span>
+                        <CollapseIconInput
+                            initial={ sidebarCollapsed ? "collapsed" : "expanded" }
+                            animate={ sidebarCollapsed ? "collapsed" : "expanded" }
+                            variants={ LabelVariants }
+                            onClick={ (event => {
+                                resetZoomCenter(event)
+                            }) }><FontAwesomeIcon icon={ faTimesCircle }/></CollapseIconInput>
 
                     </div>
                     <div>
                         {
                             (filterResult.length > 0 ? filterResult : result).map(area => (
-                                <div className="list-item truncate"
-                                     style={ {
-                                         paddingLeft: 20,
-                                         paddingBottom: 10,
-                                         overflow: 'hidden',
-                                         textOverflow: 'ellipsis',
-                                     } }
-                                     onClick={ (event => {
-                                         onChildClick(event, area);
-                                         mapInstance.setZoom(15);
-                                         mapInstance.panTo({
-                                             lat: parseFloat(area.latitude),
-                                             lng: parseFloat(area.longitude)
-                                         });
-                                     }) }
-                                     key={ `point-${ area.id }` }
-                                     onMouseEnter={ (event => (onChildMouseEnter(event, `point-${ area.id }`))) }
-                                     onMouseLeave={ onChildMouseLeave }
-                                >
-                                    {
-                                        renderIcon(area.motive_text)
-                                    }
-                                    <span
-                                        style={ { fontWeight: 700 } }>{ area.client_db_ref }</span> - { (area.client_name) }
-                                </div>
+                                <MenuItem key={area.id}>
+                                    <MenuLabel
+                                        variants={ LabelVariants }
+                                        onClick={ (event => {
+                                            onChildClick(event, area);
+                                            mapInstance.setZoom(15);
+                                            mapInstance.panTo({
+                                                lat: parseFloat(area.latitude),
+                                                lng: parseFloat(area.longitude)
+                                            });
+                                        }) }
+                                        key={ `point-${ area.id }` }
+                                        onMouseEnter={ (event => (onChildMouseEnter(event, `point-${ area.id }`))) }
+                                        onMouseLeave={ onChildMouseLeave }>
+                                        {
+                                            renderIcon(area.motive_text)
+                                        }
+                                        <span
+                                            style={ { fontWeight: 700 } }>{ area.client_db_ref }</span> - { (area.client_name) }
+                                    </MenuLabel>
+                                </MenuItem>
                             ))
                         }
                     </div>
-                </div>
-            </ListOverMap>
+                </Menu>
+
+            </Sidebar>
         </div>
     )
 };

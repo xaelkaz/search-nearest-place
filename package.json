@@ -20,6 +20,7 @@
     "react-dom": "^16.13.1",
     "react-feather": "^2.0.4",
     "react-scripts": "3.4.1",
+    "styled-components": "^5.1.0",
     "supercluster": "^7.0.0",
     "use-supercluster": "^0.2.6"
   },

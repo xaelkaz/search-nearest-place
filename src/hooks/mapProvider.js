@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useRef, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import clientJsonData from "../assets/data/client"
 import _ from "lodash"
 import useSupercluster from "use-supercluster";
