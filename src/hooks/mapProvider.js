@@ -25,6 +25,8 @@ const MapProvider = (props) => {
 
         const [ reduceCenter, setReduceCenter ] = useState([ 9.084515, -79.393285 ]);
 
+        const [ sidebarCollapsed, setSidebarCollapsed ] = useState(true);
+
         const apiHasLoaded = (map, maps) => {
             setMapInstance(map);
             setMapApi(maps);
@@ -108,6 +110,7 @@ const MapProvider = (props) => {
             setQuery(childProps.client_name);
             const filter = result.filter(area => area.client_db_ref.match(new RegExp(`.*${ childProps.client_db_ref }.*`, 'gi')));
             setFilterResult(filter);
+            setSidebarCollapsed(false);
         };
 
         const onChildMouseEnter = (event, childProps) => {
@@ -117,6 +120,11 @@ const MapProvider = (props) => {
 
         const onChildMouseLeave = () => {
             setPlaceKeyHovered(0);
+        };
+
+        const toggleSidebar = (e) => {
+            e.preventDefault();
+            setSidebarCollapsed(!sidebarCollapsed);
         };
 
         return (
@@ -131,6 +139,7 @@ const MapProvider = (props) => {
                 setZoomProvider,
                 setBoundsProvider,
                 clearQueryInput,
+                toggleSidebar,
                 mapApiLoaded,
                 mapInstance,
                 hoverPlaceKey,
@@ -139,7 +148,8 @@ const MapProvider = (props) => {
                 clusters,
                 supercluster,
                 points,
-                reduceCenter
+                reduceCenter,
+                sidebarCollapsed
             } }>{ props.children }</Provider>
         )
     }

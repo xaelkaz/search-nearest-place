@@ -27,6 +27,7 @@ const MapView = () => {
         updateQuery,
         onChildMouseEnter,
         onChildMouseLeave,
+        toggleSidebar,
         apiHasLoaded,
         mapApiLoaded,
         mapInstance,
@@ -39,7 +40,8 @@ const MapView = () => {
         points,
         reduceCenter,
         onChildClick,
-        hoverPlaceKey
+        hoverPlaceKey,
+        sidebarCollapsed
     } = useContext(store);
 
     const defaultProps = {
@@ -50,11 +52,7 @@ const MapView = () => {
         zoom: 10,
         maxZoom: 19
     };
-    const [ sidebarCollapsed, setSidebarCollapsed ] = useState(true);
 
-    const toggleSidebar = () => {
-        setSidebarCollapsed(!sidebarCollapsed);
-    };
     // Re-center map when resizing the window
     const bindResizeListener = (map, maps, bounds) => {
         maps.event.addDomListenerOnce(map, 'idle', () => {
@@ -196,7 +194,7 @@ const MapView = () => {
                 variants={ SidebarVariants }>
                 <Menu>
 
-                    <CollapseBtn onClick={ () => toggleSidebar() }>
+                    <CollapseBtn onClick={ (event) => toggleSidebar(event) }>
                         { sidebarCollapsed ? <FontAwesomeIcon icon={ faBars } size="lg"/> :
                             <FontAwesomeIcon icon={ faAngleDoubleLeft } size="lg"/> }
                     </CollapseBtn>
