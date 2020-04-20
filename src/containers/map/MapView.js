@@ -1,19 +1,20 @@
 import GoogleMapReact from "google-map-react";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { store } from "../../hooks/mapProvider";
-import { mapStyles } from "./mapStyle";
 import MarkerMapSale from "../../components/map/points/single/MarkerMapSale";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import {
-    CollapseBtn, CollapseIconInput, CollapseInput, LabelVariants,
+    CollapseBtn, CollapseIconInput, CollapseInput, LabelVariants, mapStyles,
     Menu,
     MenuItem,
-    MenuLabel, SearchInputVariants,
-    Sidebar, SidebarVariants
-} from "../../stylesheets/styleContainer";
+    MenuLabel,
+    Sidebar,
+    SidebarVariants
+} from "./styleContainer";
 import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons/faAngleDoubleLeft";
+import SidebarMenu from "../tag/TagView";
 
 const Marker = ({ children }) => children;
 
@@ -85,10 +86,9 @@ const MapView = () => {
         bindResizeListener(map, maps, bounds);
     };
 
-    const clientData = filterResult.length > 0 ? filterResult : result;
+    //const clientData = filterResult.length > 0 ? filterResult : result;
 
-
-    if (clientData.length === 0 && !mapApiLoaded) {
+    if (filterResult.length === 0 && !mapApiLoaded) {
         return (
             <div>
                 <p>Loading</p>
@@ -123,7 +123,7 @@ const MapView = () => {
                         maxZoom: defaultProps.maxZoom,
                     });
                     apiHasLoaded(map, maps);
-                    apiIsLoaded(map, maps, clientData)
+                    apiIsLoaded(map, maps, filterResult)
                 } }
                 yesIWantToUseGoogleMapApiInternals
                 zoom={ defaultProps.zoom }
@@ -193,7 +193,6 @@ const MapView = () => {
                 animate={ sidebarCollapsed ? "collapsed" : "expanded" }
                 variants={ SidebarVariants }>
                 <Menu>
-
                     <CollapseBtn onClick={ (event) => toggleSidebar(event) }>
                         { sidebarCollapsed ? <FontAwesomeIcon icon={ faBars } size="lg"/> :
                             <FontAwesomeIcon icon={ faAngleDoubleLeft } size="lg"/> }
@@ -220,10 +219,17 @@ const MapView = () => {
                             }) }><FontAwesomeIcon icon={ faTimesCircle }/></CollapseIconInput>
 
                     </div>
+                    <CollapseIconInput
+                        initial={ sidebarCollapsed ? "collapsed" : "expanded" }
+                        animate={ sidebarCollapsed ? "collapsed" : "expanded" }
+                        variants={ LabelVariants }
+                    >
+                        <SidebarMenu data={ result } selection="Gmail Subscribers"/>
+                    </CollapseIconInput>
                     <div>
                         {
-                            (filterResult.length > 0 ? filterResult : result).map(area => (
-                                <MenuItem key={area.id}>
+                            (filterResult).map(area => (
+                                <MenuItem key={ area.id }>
                                     <MenuLabel
                                         variants={ LabelVariants }
                                         onClick={ (event => {

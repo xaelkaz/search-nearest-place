@@ -2,7 +2,7 @@ import React from 'react';
 import '../stylesheets/App.scss';
 import MapView from "./map/MapView";
 import { MapProvider } from "../hooks/mapProvider";
-import { Container } from "../stylesheets/styleContainer";
+import { Container } from "./map/styleContainer";
 
 function App() {
 

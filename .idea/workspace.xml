@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a3b6be70-0221-40e7-9bc1-6f6ba6f0e147" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/map/list-over-map/list-over-map.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/map/list-over-map/list-over-map.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/list-over-map/list-over-map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/map/MapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/MapView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/map/mapStyle.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/mapProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/mapProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stylesheets/styleContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/styleContainer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +31,6 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -54,11 +58,11 @@
       <recent name="$PROJECT_DIR$/src/component/map" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/tag/svg" />
+      <recent name="$PROJECT_DIR$/src/containers/map" />
       <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src/components/map/points" />
       <recent name="$PROJECT_DIR$/src/components/map/points/single/cluster" />
-      <recent name="$PROJECT_DIR$/src/components/map/points/single" />
-      <recent name="$PROJECT_DIR$/src/containers/map" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -85,11 +89,13 @@
       <workItem from="1586798356713" duration="3123000" />
       <workItem from="1586804256372" duration="422000" />
       <workItem from="1586820372676" duration="18141000" />
+      <workItem from="1587388852037" duration="3867000" />
+      <workItem from="1587393146481" duration="11538000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -107,11 +113,15 @@
     </state>
     <state x="454" y="250" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586798458969" />
     <state x="454" y="250" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1586456251154" />
-    <state x="524" y="240" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586455458853">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="2088" y="294" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1587392738673">
+      <screen x="1440" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2088" y="294" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587392738673" />
+    <state x="2138" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587389496799">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="524" y="240" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1586455458853" />
-    <state x="2138" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586192343998" />
+    <state x="2138" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587389496799" />
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1586826939863">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -122,36 +132,47 @@
     </state>
     <state x="352" y="142" key="SettingsEditor/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586800749761" />
     <state x="1909" y="190" key="SettingsEditor/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586189630981" />
-    <state x="100" y="98" width="1240" height="754" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586830533329">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="1573" y="138" width="1654" height="886" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1587414713009">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="100" y="98" width="1240" height="754" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586830533329" />
     <state x="100" y="111" width="1240" height="679" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1586373965619" />
     <state x="100" y="111" width="1240" height="679" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.811/1440.23.1920.1057@0.23.1440.811" timestamp="1586801821728" />
+    <state x="1573" y="138" width="1654" height="886" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587414713009" />
     <state x="100" y="123" width="1240" height="611" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.811@0.23.1440.811" timestamp="1586203701631" />
     <state x="378" y="72" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586353636342">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="378" y="72" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1586353636342" />
-    <state x="502" y="369" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586835669938">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="2109" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587407484188">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="502" y="369" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586835669938" />
+    <state x="2109" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587407484188" />
     <state x="0" y="0" width="1440" height="900" maximized="true" key="dock-window-1" timestamp="1586392411741">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="0" y="0" width="1440" height="900" maximized="true" key="dock-window-1/0.0.1440.900@0.0.1440.900" timestamp="1586392411741" />
-    <state x="368" y="191" width="703" height="518" key="find.popup" timestamp="1586455181143">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="1931" y="247" width="938" height="609" key="find.popup" timestamp="1587409807360">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586378798209" />
     <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1586455181143" />
-    <state x="469" y="200" width="670" height="576" key="search.everywhere.popup" timestamp="1586836971558">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="1931" y="247" width="938" height="609" key="find.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587409807360" />
+    <state width="600" height="440" key="javadoc.popup" timestamp="1587390719301">
+      <screen x="1440" y="23" width="1920" height="1057" />
+    </state>
+    <state width="600" height="440" key="javadoc.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587390719301" />
+    <state x="2065" y="256" key="run.anything.popup" timestamp="1587406075280">
+      <screen x="1440" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2065" y="256" key="run.anything.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587406075280" />
+    <state x="2065" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1587422880618">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586828565857" />
     <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1586836971558" />
-    <state x="2065" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586192795384" />
+    <state x="2065" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587422880618" />
     <state x="469" y="203" width="670" height="519" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1586203531486" />
   </component>
   <component name="XDebuggerManager">
@@ -159,19 +180,16 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/map/MapView.js</url>
-          <line>252</line>
-          <properties lambdaOrdinal="-1" />
+          <line>258</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/App.js</url>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/map/MapView.js</url>
-          <line>205</line>
-          <properties lambdaOrdinal="-1" />
+          <line>204</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>

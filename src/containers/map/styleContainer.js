@@ -1,6 +1,78 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
+export const mapStyles = [
+    {
+        featureType: "landscape.natural",
+        elementType: "geometry.fill",
+        stylers: [
+            {
+                visibility: "on"
+            },
+            {
+                //color: "#e0efef"
+            }
+        ]
+    },
+    {
+        featureType: "poi",
+        elementType: "geometry.fill",
+        stylers: [
+            {
+                visibility: "on"
+            },
+            {
+                hue: "#1900ff"
+            },
+            {
+                color: "#c0e8e8"
+            }
+        ]
+    },
+    {
+        featureType: "road",
+        elementType: "geometry",
+        stylers: [
+            {
+                lightness: 900
+            },
+            {
+                visibility: "simplified"
+            }
+        ]
+    },
+    {
+        featureType: "road",
+        elementType: "labels",
+        stylers: [
+            {
+                visibility: "off"
+            }
+        ]
+    },
+    {
+        featureType: "transit.line",
+        elementType: "geometry",
+        stylers: [
+            {
+                visibility: "on"
+            },
+            {
+                lightness: 700
+            }
+        ]
+    },
+    {
+        featureType: "water",
+        elementType: "all",
+        stylers: [
+            {
+                color: "#7dcdcd"
+            }
+        ]
+    }
+];
+
 export const COLLAPSED_WIDTH = "50px";
 export const EXPANDED_WIDTH = "350px";
 
@@ -108,12 +180,12 @@ export const CollapseBtn = styled(motion.span)`
   z-index: 1003;
 `;
 
-export const CollapseInput = styled(motion.input) `
+export const CollapseInput = styled(motion.input)`
     width: 100%;
     margin: 2.5rem 0rem 0rem 0rem;
     border-radius: 20px !important;
 
 `;
 
-export const CollapseIconInput = styled(motion.span) ``;
+export const CollapseIconInput = styled(motion.span)``;
 

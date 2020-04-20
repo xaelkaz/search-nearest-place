@@ -5,11 +5,14 @@ import useSupercluster from "use-supercluster";
 
 const initialState = {};
 const store = createContext(initialState);
-const { Provider, Consumer } = store;
+const { Provider } = store;
 
 const MapProvider = (props) => {
 
         const [ result, setResult ] = useState([]);
+
+        const [ filterByTag, setFilterByTag ] = useState([]);
+
         const [ filterResult, setFilterResult ] = useState([]);
 
         const [ mapApiLoaded, setMapApiLoaded ] = useState(false);
@@ -27,6 +30,12 @@ const MapProvider = (props) => {
 
         const [ sidebarCollapsed, setSidebarCollapsed ] = useState(true);
 
+        const [ selected, setSelected ] = useState([]);
+
+        const isSelected = name => {
+            return selected.indexOf(name) !== -1;
+        };
+
         const apiHasLoaded = (map, maps) => {
             setMapInstance(map);
             setMapApi(maps);
@@ -35,7 +44,7 @@ const MapProvider = (props) => {
 
         const clientData = filterResult.length > 0 ? filterResult : result;
 
-        const points = clientData.map(point => ({
+        const points = filterResult.map(point => ({
             type: "Feature",
             properties: {
                 cluster: false,
@@ -83,6 +92,7 @@ const MapProvider = (props) => {
                 setReduceCenter([ reduceLatitude / filterUniqueValue.length, reduceLongitude / filterUniqueValue.length ]);
 
                 setResult(filterUniqueValue)
+                setFilterResult(filterUniqueValue)
             });
         }, []);
 
@@ -93,7 +103,8 @@ const MapProvider = (props) => {
         const updateQuery = (event, resetQuery = false) => {
             event.preventDefault();
             const query = event.target.value;
-            const filter = result.filter(area => area.client_name.match(new RegExp(`.*${ query }.*`, 'gi')));
+            const filter = filterByTag.length === 0 ? result.filter(area => area.client_name.match(new RegExp(`.*${ query }.*`, 'gi')))
+                : filterByTag.filter(area => area.client_name.match(new RegExp(`.*${ query }.*`, 'gi')))
             setFilterResult(filter);
             resetQuery ? clearQueryInput() : setQuery(query);
         };
@@ -127,6 +138,40 @@ const MapProvider = (props) => {
             setSidebarCollapsed(!sidebarCollapsed);
         };
 
+        const handleClick = (event, name) => {
+            const selectedIndex = selected.indexOf(name);
+            let newSelected = [];
+            if (selectedIndex === -1) {
+                newSelected = newSelected.concat(selected, name);
+            } else if (selectedIndex === 0) {
+                newSelected = newSelected.concat(selected.slice(1));
+            } else if (selectedIndex === selected.length - 1) {
+                newSelected = newSelected.concat(selected.slice(0, -1));
+            } else if (selectedIndex > 0) {
+                newSelected = newSelected.concat(
+                    selected.slice(0, selectedIndex),
+                    selected.slice(selectedIndex + 1)
+                );
+            }
+            const filteredKeywords = result.filter((word) => newSelected.includes(word.client_db_ref));
+
+            setFilterByTag(filteredKeywords);
+
+            // Filter original list by tag
+            setFilterResult(filteredKeywords)
+
+            resetFilterByTag(filteredKeywords)
+
+            setSelected(newSelected);
+        };
+
+        function resetFilterByTag(filteredKeywords) {
+            setQuery('')
+            if (filteredKeywords.length === 0){
+                setFilterResult(result)
+            }
+        }
+
         return (
             <Provider value={ {
                 result,
@@ -140,6 +185,8 @@ const MapProvider = (props) => {
                 setBoundsProvider,
                 clearQueryInput,
                 toggleSidebar,
+                handleClick,
+                isSelected,
                 mapApiLoaded,
                 mapInstance,
                 hoverPlaceKey,
@@ -149,7 +196,8 @@ const MapProvider = (props) => {
                 supercluster,
                 points,
                 reduceCenter,
-                sidebarCollapsed
+                sidebarCollapsed,
+                selected
             } }>{ props.children }</Provider>
         )
     }
