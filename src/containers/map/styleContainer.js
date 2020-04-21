@@ -152,6 +152,24 @@ export const LabelVariants = {
     }
 };
 
+export const AvatarVariants = {
+    expanded: {
+        width: "300px",
+        x: 13,
+        y: 13
+    },
+    collapsed: {
+        width: "0px",
+        x: 0,
+        y: 0
+    }
+};
+
+export const Avatar = styled(motion.img)`
+  position: relative;
+`;
+
+
 export const MenuLabel = styled(motion.span)`
   display: block;
   width: 100%;

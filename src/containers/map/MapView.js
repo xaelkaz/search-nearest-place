@@ -1,5 +1,5 @@
 import GoogleMapReact from "google-map-react";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { store } from "../../hooks/mapProvider";
 import MarkerMapSale from "../../components/map/points/single/MarkerMapSale";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,12 +10,16 @@ import {
     MenuItem,
     MenuLabel,
     Sidebar,
-    SidebarVariants
+    SidebarVariants, Avatar, AvatarVariants
 } from "./styleContainer";
 import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons/faAngleDoubleLeft";
 import SidebarMenu from "../tag/TagView";
-import Link, { ActiveFilter, ListTag, ListTagActive } from "../../components/tag/list-tag-active";
+import { ActiveFilter, ListTag } from "../../components/tag/list-tag-active";
+import moment from "moment";
+import { CommentList } from "../../components/comment/commentList";
+import { Comment } from "antd";
+import { Editor } from "../../components/comment/editor";
 
 const Marker = ({ children }) => children;
 
@@ -55,6 +59,11 @@ const MapView = () => {
         zoom: 10,
         maxZoom: 19
     };
+    const [ isLiked, setIsLiked ] = useState(false);
+
+    const [ comments, setComments ] = useState([])
+    const [ submitting, setSubmitting ] = useState(false)
+    const [ value, setValue ] = useState('')
 
     // Re-center map when resizing the window
     const bindResizeListener = (map, maps, bounds) => {
@@ -115,6 +124,38 @@ const MapView = () => {
         }
         return <FontAwesomeIcon icon={ faCheckCircle } style={ { marginRight: 5 } } color={ "#4CAF50" } size="lg"/>
     }
+
+    function isLikedOnClick(e) {
+        e.preventDefault();
+        setIsLiked(!isLiked);
+    }
+
+
+    const handleSubmit = () => {
+        if (!value) {
+            return;
+        }
+        setSubmitting(true)
+
+        setTimeout(() => {
+            setSubmitting(false)
+            setValue('')
+            setComments([
+                {
+                    author: 'Han Solo',
+                    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+                    content: <p>{ value }</p>,
+                    datetime: moment().fromNow(),
+                },
+                ...comments,
+            ])
+        }, 1000);
+    };
+
+    const handleChange = e => {
+        e.preventDefault()
+        setValue(e.target.value)
+    };
 
     return (
         <div style={ { height: '100vh', width: '100%' } }>
@@ -227,7 +268,7 @@ const MapView = () => {
                         variants={ LabelVariants }
                     >
                         <ActiveFilter>
-                            { filterByTag.length >0 && <span>Filtros Activos: { "" }</span> }
+                            { filterByTag.length > 0 && <span>Filtros Activos: { "" }</span> }
                             {
                                 filterByTag.map(tag => {
                                     console.log(tag)
@@ -260,6 +301,50 @@ const MapView = () => {
                                         <span
                                             style={ { fontWeight: 700 } }>{ area.client_db_ref }</span> - { (area.client_name) }
                                     </MenuLabel>
+                                    {
+                                        filterResult.length === 1 &&
+                                        <div>
+                                            <Avatar
+                                                src="https://picsum.photos/100/100"
+                                                initial={ sidebarCollapsed ? "collapsed" : "expanded" }
+                                                animate={ sidebarCollapsed ? "collapsed" : "expanded" }
+                                                variants={ AvatarVariants }
+                                            />
+                                            <div>
+                                                <MenuLabel
+                                                    variants={ LabelVariants }>
+                                                    <div className="">
+                                                        <p onClick={ isLikedOnClick }
+                                                           className={ !isLiked ? "HeartAnimation" : "HeartAnimation animate" }>
+                                                            <p style={ { marginTop: 20 } }>5 Favoritos</p>
+                                                        </p>
+                                                        <p>Aqui va el contenido</p>
+                                                        <h3>Comentarios</h3>
+                                                        <div>
+                                                            { comments.length > 0 &&
+                                                            <CommentList comments={ comments }/> }
+                                                            <Comment
+                                                                avatar={
+                                                                    <Avatar
+                                                                        src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                                                                        alt="Han Solo"
+                                                                    />
+                                                                }
+                                                                content={
+                                                                    <Editor
+                                                                        onChange={ handleChange }
+                                                                        onSubmit={ handleSubmit }
+                                                                        submitting={ submitting }
+                                                                        value={ value }
+                                                                    />
+                                                                }
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </MenuLabel>
+                                            </div>
+                                        </div>
+                                    }
                                 </MenuItem>
                             ))
                         }

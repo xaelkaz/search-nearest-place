@@ -137,6 +137,32 @@ $pink-light: #ffa8cb10;
 $pink-hover: #ffa8cb30;
 $pink-mid: #ffa8cb99;
 
+/* Parts are from twitter.com */
+
+.HeartAnimation {
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/66955/web_heart_animation.png');
+  background-repeat: no-repeat;
+  background-size: 2900%;
+  background-position: left;
+  height: 75px;
+  width: 75px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.animate {
+  animation: heart-burst .8s steps(28) forwards;
+}
+
+@keyframes heart-burst {
+  0% {
+    background-position: left
+  }
+  100% {
+    background-position: right
+  }
+}
+
 .pin {
   width: 30px;
   height: 30px;

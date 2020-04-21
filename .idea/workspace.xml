@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3b6be70-0221-40e7-9bc1-6f6ba6f0e147" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/tag/list-tag-active.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/tag/aside-tag.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tag/aside-tag.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/tag/link.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/map/MapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/MapView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/map/styleContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/styleContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/tag/TagView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/tag/TagView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/mapProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/mapProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stylesheets/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +91,7 @@
       <workItem from="1586804256372" duration="422000" />
       <workItem from="1586820372676" duration="18141000" />
       <workItem from="1587388852037" duration="3867000" />
-      <workItem from="1587393146481" duration="14731000" />
+      <workItem from="1587393146481" duration="20750000" />
     </task>
     <servers />
   </component>
@@ -153,12 +154,12 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="0" y="0" width="1440" height="900" maximized="true" key="dock-window-1/0.0.1440.900@0.0.1440.900" timestamp="1586392411741" />
-    <state x="1931" y="247" width="938" height="609" key="find.popup" timestamp="1587409807360">
+    <state x="1931" y="247" width="938" height="609" key="find.popup" timestamp="1587432358251">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586378798209" />
     <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1586455181143" />
-    <state x="1931" y="247" width="938" height="609" key="find.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587409807360" />
+    <state x="1931" y="247" width="938" height="609" key="find.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587432358251" />
     <state width="600" height="440" key="javadoc.popup" timestamp="1587390719301">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
@@ -167,20 +168,20 @@
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="2065" y="256" key="run.anything.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587406075280" />
-    <state x="2065" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1587428573690">
-      <screen x="1440" y="23" width="1920" height="1057" />
+    <state x="469" y="203" width="670" height="519" key="search.everywhere.popup" timestamp="1587439292690">
+      <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586828565857" />
     <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1586836971558" />
-    <state x="2065" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587428573690" />
-    <state x="469" y="203" width="670" height="519" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1586203531486" />
+    <state x="2065" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587436344983" />
+    <state x="469" y="203" width="670" height="519" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1587439292690" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/map/MapView.js</url>
-          <line>269</line>
+          <line>354</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -189,7 +190,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/map/MapView.js</url>
-          <line>206</line>
+          <line>247</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>

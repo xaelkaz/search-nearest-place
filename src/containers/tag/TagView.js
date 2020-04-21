@@ -8,7 +8,12 @@ const SidebarMenu = ({ data, selection }) => {
     const dataCategories = [ {
         title: 'Categorias',
         options: data
-    } ]
+    },
+        {
+            title: 'Favoritos',
+            options: []
+        }
+    ]
 
     return dataCategories.map((datum, idx) => (
         <Aside

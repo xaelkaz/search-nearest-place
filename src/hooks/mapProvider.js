@@ -97,7 +97,7 @@ const MapProvider = (props) => {
         }, []);
 
         const clearQueryInput = () => {
-            setQuery("");
+            resetFilterByTag([])
         };
 
         const updateQuery = (event, resetQuery = false) => {
