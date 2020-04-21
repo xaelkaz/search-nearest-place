@@ -9,14 +9,14 @@ const Option = props => {
         isSelected
     } = useContext(store);
 
-    const isItemSelected = isSelected(row.client_db_ref);
+    const isItemSelected = isSelected(row.activity_name);
 
     return <label>
         <Checkbox
             key={ row.id }
-            name={ row.client_db_ref }
+            name={ row.activity_name }
             checked={ isItemSelected }
-            onChange={ event => handleClick(event, row.client_db_ref) }
+            onChange={ event => handleClick(event, row.activity_name) }
         />
     </label>
 }

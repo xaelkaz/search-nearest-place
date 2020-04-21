@@ -20,6 +20,7 @@ import moment from "moment";
 import { CommentList } from "../../components/comment/commentList";
 import { Comment } from "antd";
 import { Editor } from "../../components/comment/editor";
+import _ from "lodash";
 
 const Marker = ({ children }) => children;
 
@@ -278,9 +279,8 @@ const MapView = () => {
                         <ActiveFilter>
                             { filterByTag.length > 0 && <span>Filtros Activos: { "" }</span> }
                             {
-                                filterByTag.map(tag => {
-                                    console.log(tag)
-                                    return <ListTag key={ tag.id }>{ tag.client_db_ref }</ListTag>
+                                _.uniqBy(filterByTag, "activity_name").map(tag => {
+                                    return <ListTag key={ tag.id }>{ tag.activity_name }</ListTag>
                                 })
                             }
                         </ActiveFilter>
@@ -291,7 +291,8 @@ const MapView = () => {
                             <MenuLabel
                                 variants={ LabelVariants }>
                                 <p>No se encontraron resultados
-                                    para la busqueda { query } { filterByTag.length > 0 ? 'con los filtros seleccionados' : '' }</p>
+                                    para la
+                                    busqueda { query } { filterByTag.length > 0 ? 'con los filtros seleccionados' : '' }</p>
                             </MenuLabel>
                         </div>
                     }

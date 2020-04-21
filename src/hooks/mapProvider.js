@@ -139,7 +139,7 @@ const MapProvider = (props) => {
         };
 
         function handleFilterByTag(newSelected) {
-            const filteredKeywords = result.filter((word) => newSelected.includes(word.client_db_ref));
+            const filteredKeywords = result.filter((word) => newSelected.includes(word.activity_name));
 
             setFilterByTag(filteredKeywords);
 
