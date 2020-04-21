@@ -97,7 +97,7 @@ const MapProvider = (props) => {
         }, []);
 
         const clearQueryInput = () => {
-            resetFilterByTag([])
+            handleFilterByTag(selected)
         };
 
         const updateQuery = (event, resetQuery = false) => {
@@ -138,6 +138,17 @@ const MapProvider = (props) => {
             setSidebarCollapsed(!sidebarCollapsed);
         };
 
+        function handleFilterByTag(newSelected) {
+            const filteredKeywords = result.filter((word) => newSelected.includes(word.client_db_ref));
+
+            setFilterByTag(filteredKeywords);
+
+            // Filter original list by tag
+            setFilterResult(filteredKeywords)
+
+            resetFilterByTag(filteredKeywords)
+        }
+
         const handleClick = (event, name) => {
             const selectedIndex = selected.indexOf(name);
             let newSelected = [];
@@ -153,21 +164,15 @@ const MapProvider = (props) => {
                     selected.slice(selectedIndex + 1)
                 );
             }
-            const filteredKeywords = result.filter((word) => newSelected.includes(word.client_db_ref));
 
-            setFilterByTag(filteredKeywords);
-
-            // Filter original list by tag
-            setFilterResult(filteredKeywords)
-
-            resetFilterByTag(filteredKeywords)
+            handleFilterByTag(newSelected)
 
             setSelected(newSelected);
         };
 
         function resetFilterByTag(filteredKeywords) {
             setQuery('')
-            if (filteredKeywords.length === 0){
+            if (filteredKeywords.length === 0) {
                 setFilterResult(result)
             }
         }
