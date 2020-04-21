@@ -286,6 +286,15 @@ const MapView = () => {
                         </ActiveFilter>
                         <SidebarMenu data={ result } selection="Gmail Subscribers"/>
                     </CollapseSideBarContent>
+                    {
+                        filterResult.length === 0 && <div>
+                            <MenuLabel
+                                variants={ LabelVariants }>
+                                <p>No se encontraron resultados
+                                    para la busqueda { query } { filterByTag.length > 0 ? 'con los filtros seleccionados' : '' }</p>
+                            </MenuLabel>
+                        </div>
+                    }
                     <div>
                         {
                             (filterResult).map(area => (
@@ -324,7 +333,7 @@ const MapView = () => {
                                                     <div className="">
                                                         <p onClick={ isLikedOnClick }
                                                            className={ !isLiked ? "HeartAnimation" : "HeartAnimation animate" }>
-                                                            <p style={ { marginTop: 20 } }>5 Favoritos</p>
+                                                            <span>5 Favoritos</span>
                                                         </p>
                                                         <p>Aqui va el contenido</p>
                                                         <h3>Comentarios</h3>

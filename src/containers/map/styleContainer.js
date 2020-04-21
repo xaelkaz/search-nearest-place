@@ -167,6 +167,7 @@ export const AvatarVariants = {
 
 export const Avatar = styled(motion.img)`
   position: relative;
+  margin-bottom: 15px;
 `;
 
 
