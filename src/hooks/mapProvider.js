@@ -197,7 +197,8 @@ const MapProvider = (props) => {
                 points,
                 reduceCenter,
                 sidebarCollapsed,
-                selected
+                selected,
+                filterByTag
             } }>{ props.children }</Provider>
         )
     }

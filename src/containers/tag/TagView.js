@@ -9,7 +9,7 @@ const SidebarMenu = ({ data, selection }) => {
         title: 'Categorias',
         options: data
     } ]
-    
+
     return dataCategories.map((datum, idx) => (
         <Aside
             datum={ datum }

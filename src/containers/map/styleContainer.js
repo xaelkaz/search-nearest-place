@@ -102,7 +102,6 @@ export const Sidebar = styled(motion.div)`
   
     align-items: flex-start;
     justify-content: space-between;
-    min-width: 0;
     padding: 0;
     background: rgba(255, 255, 255, 0.85);
     -moz-box-shadow:     0 -1px 24px rgba(0,0,0,0.4);
@@ -187,5 +186,5 @@ export const CollapseInput = styled(motion.input)`
 
 `;
 
-export const CollapseIconInput = styled(motion.span)``;
+export const CollapseSideBarContent = styled(motion.span)``;
 

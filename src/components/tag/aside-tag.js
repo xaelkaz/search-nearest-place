@@ -24,7 +24,7 @@ const Aside = ({
     }, [ idx, isSelected, setExpanded ]);
 
     return (
-        <aside>
+        <aside style={{marginBottom: 20}}>
             <Title isOpen={ isOpen } onClick={ handleClick }>
                 { title }
             </Title>

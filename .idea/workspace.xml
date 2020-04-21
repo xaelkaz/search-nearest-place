@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3b6be70-0221-40e7-9bc1-6f6ba6f0e147" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/tag/list-tag-active.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/map/list-over-map/list-over-map.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/map/list-over-map/list-over-map.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/list-over-map/list-over-map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/tag/aside-tag.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tag/aside-tag.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/tag/link.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/map/MapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/MapView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/map/mapStyle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/map/styleContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/styleContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/tag/TagView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/tag/TagView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/mapProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/mapProvider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/styleContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/styleContainer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +90,7 @@
       <workItem from="1586804256372" duration="422000" />
       <workItem from="1586820372676" duration="18141000" />
       <workItem from="1587388852037" duration="3867000" />
-      <workItem from="1587393146481" duration="11538000" />
+      <workItem from="1587393146481" duration="14731000" />
     </task>
     <servers />
   </component>
@@ -132,13 +132,13 @@
     </state>
     <state x="352" y="142" key="SettingsEditor/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586800749761" />
     <state x="1909" y="190" key="SettingsEditor/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1586189630981" />
-    <state x="1573" y="138" width="1654" height="886" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1587414713009">
+    <state x="1573" y="138" width="1654" height="886" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1587426605140">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="100" y="98" width="1240" height="754" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586830533329" />
     <state x="100" y="111" width="1240" height="679" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1586373965619" />
     <state x="100" y="111" width="1240" height="679" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.811/1440.23.1920.1057@0.23.1440.811" timestamp="1586801821728" />
-    <state x="1573" y="138" width="1654" height="886" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587414713009" />
+    <state x="1573" y="138" width="1654" height="886" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587426605140" />
     <state x="100" y="123" width="1240" height="611" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.811@0.23.1440.811" timestamp="1586203701631" />
     <state x="378" y="72" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586353636342">
       <screen x="0" y="0" width="1440" height="900" />
@@ -167,12 +167,12 @@
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="2065" y="256" key="run.anything.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587406075280" />
-    <state x="2065" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1587422880618">
+    <state x="2065" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1587428573690">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586828565857" />
     <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1586836971558" />
-    <state x="2065" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587422880618" />
+    <state x="2065" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587428573690" />
     <state x="469" y="203" width="670" height="519" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1586203531486" />
   </component>
   <component name="XDebuggerManager">
@@ -180,7 +180,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/map/MapView.js</url>
-          <line>258</line>
+          <line>269</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -189,7 +189,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/map/MapView.js</url>
-          <line>204</line>
+          <line>206</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>

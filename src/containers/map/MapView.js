@@ -5,7 +5,7 @@ import MarkerMapSale from "../../components/map/points/single/MarkerMapSale";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import {
-    CollapseBtn, CollapseIconInput, CollapseInput, LabelVariants, mapStyles,
+    CollapseBtn, CollapseSideBarContent, CollapseInput, LabelVariants, mapStyles,
     Menu,
     MenuItem,
     MenuLabel,
@@ -15,6 +15,7 @@ import {
 import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons/faAngleDoubleLeft";
 import SidebarMenu from "../tag/TagView";
+import Link, { ActiveFilter, ListTag, ListTagActive } from "../../components/tag/list-tag-active";
 
 const Marker = ({ children }) => children;
 
@@ -42,7 +43,8 @@ const MapView = () => {
         reduceCenter,
         onChildClick,
         hoverPlaceKey,
-        sidebarCollapsed
+        sidebarCollapsed,
+        filterByTag
     } = useContext(store);
 
     const defaultProps = {
@@ -210,22 +212,31 @@ const MapView = () => {
                             value={ query }
                             aria-label="Small"
                             aria-describedby="inputGroup-sizing-sm"/>
-                        <CollapseIconInput
+                        <CollapseSideBarContent
                             initial={ sidebarCollapsed ? "collapsed" : "expanded" }
                             animate={ sidebarCollapsed ? "collapsed" : "expanded" }
                             variants={ LabelVariants }
                             onClick={ (event => {
                                 resetZoomCenter(event)
-                            }) }><FontAwesomeIcon icon={ faTimesCircle }/></CollapseIconInput>
+                            }) }><FontAwesomeIcon icon={ faTimesCircle }/></CollapseSideBarContent>
 
                     </div>
-                    <CollapseIconInput
+                    <CollapseSideBarContent
                         initial={ sidebarCollapsed ? "collapsed" : "expanded" }
                         animate={ sidebarCollapsed ? "collapsed" : "expanded" }
                         variants={ LabelVariants }
                     >
+                        <ActiveFilter>
+                            { filterByTag.length >0 && <span>Filtros Activos: { "" }</span> }
+                            {
+                                filterByTag.map(tag => {
+                                    console.log(tag)
+                                    return <ListTag key={ tag.id }>{ tag.client_db_ref }</ListTag>
+                                })
+                            }
+                        </ActiveFilter>
                         <SidebarMenu data={ result } selection="Gmail Subscribers"/>
-                    </CollapseIconInput>
+                    </CollapseSideBarContent>
                     <div>
                         {
                             (filterResult).map(area => (
