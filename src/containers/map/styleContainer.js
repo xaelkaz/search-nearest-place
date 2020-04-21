@@ -181,6 +181,16 @@ export const MenuLabel = styled(motion.span)`
   font-weight: 400;
 `;
 
+export const SidebarLogin = styled.div`
+  display: flex;
+  flex: 0 0 40px;
+  min-width: 0;
+  align-items: center;
+  align-self: stretch;
+`;
+
+export const LogLink = styled(motion.a)``;
+
 export const CollapseBtn = styled(motion.span)`
   padding: 10px 15px;
   display: block;

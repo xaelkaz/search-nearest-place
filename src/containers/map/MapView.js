@@ -10,7 +10,7 @@ import {
     MenuItem,
     MenuLabel,
     Sidebar,
-    SidebarVariants, Avatar, AvatarVariants
+    SidebarVariants, Avatar, AvatarVariants, LogLink, SidebarLogin
 } from "./styleContainer";
 import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons/faAngleDoubleLeft";
@@ -216,7 +216,6 @@ const MapView = () => {
                             </Marker>
                         );
                     }
-
                     return (
                         <MarkerMapSale
                             key={ `point-${ cluster.properties.pointId }` }
@@ -236,10 +235,19 @@ const MapView = () => {
                 animate={ sidebarCollapsed ? "collapsed" : "expanded" }
                 variants={ SidebarVariants }>
                 <Menu>
-                    <CollapseBtn onClick={ (event) => toggleSidebar(event) }>
-                        { sidebarCollapsed ? <FontAwesomeIcon icon={ faBars } size="lg"/> :
-                            <FontAwesomeIcon icon={ faAngleDoubleLeft } size="lg"/> }
-                    </CollapseBtn>
+                    <SidebarLogin>
+                        <LogLink
+                            initial={ sidebarCollapsed ? "collapsed" : "expanded" }
+                            animate={ sidebarCollapsed ? "collapsed" : "expanded" }
+                            variants={ LabelVariants }
+                        >
+                            Sign Out / Login
+                        </LogLink>
+                        <CollapseBtn onClick={ (event) => toggleSidebar(event) }>
+                            { sidebarCollapsed ? <FontAwesomeIcon icon={ faBars } size="lg"/> :
+                                <FontAwesomeIcon icon={ faAngleDoubleLeft } size="lg"/> }
+                        </CollapseBtn>
+                    </SidebarLogin>
                     <div className="input-group input-group-sm mb-3 clear-input">
                         <CollapseInput
                             initial={ sidebarCollapsed ? "collapsed" : "expanded" }

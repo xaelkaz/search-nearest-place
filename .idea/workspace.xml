@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a3b6be70-0221-40e7-9bc1-6f6ba6f0e147" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/map/MapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/MapView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/map/styleContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/styleContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/tag/TagView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/tag/TagView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/mapProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/mapProvider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +85,7 @@
       <workItem from="1586804256372" duration="422000" />
       <workItem from="1586820372676" duration="18141000" />
       <workItem from="1587388852037" duration="3867000" />
-      <workItem from="1587393146481" duration="20750000" />
+      <workItem from="1587393146481" duration="21346000" />
     </task>
     <servers />
   </component>
@@ -181,7 +175,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/map/MapView.js</url>
-          <line>354</line>
+          <line>363</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -190,7 +184,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/map/MapView.js</url>
-          <line>247</line>
+          <line>256</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
