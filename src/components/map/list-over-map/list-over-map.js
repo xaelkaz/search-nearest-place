@@ -1,9 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 const ListOverMap = ({ children }) => (
-    <div className="list-over-map">
-        { children }
-    </div>
-);
+  <div className="list-over-map">{children}</div>
+)
 
-export default ListOverMap;
+export default ListOverMap

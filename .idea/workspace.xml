@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3b6be70-0221-40e7-9bc1-6f6ba6f0e147" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hooks/useQueryString.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/firestore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/data/client.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/data/client.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/map/points/MarkerMap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/MarkerMap.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/map/points/single/MarkerMapMotive.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/map/points/single/MarkerMapSale.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/single/MarkerMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/map/MapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/MapView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/mapProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/mapProvider.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +32,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />

@@ -13,13 +13,13 @@ const Header = styled(motion.header)`
   margin-bottom: 9px;
   padding-bottom: 4px;
   text-transform: uppercase;
-`;
+`
 
 const Title = ({ children, isOpen, onClick }) => (
-    <Header onClick={ onClick }>
-        <Chevron isOpen={ isOpen }/>
-        { children }
-    </Header>
-);
+  <Header onClick={onClick}>
+    <Chevron isOpen={isOpen} />
+    {children}
+  </Header>
+)
 
 export default Title

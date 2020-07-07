@@ -5,4 +5,5 @@
  * @param { [Object] } xs List of menu options
  * @returns { Boolean }
  */
-export default (s, xs) => xs.map(x => x.text).filter(x => x === s).length > 0
+export default (s, xs) =>
+  xs.map((x) => x.text).filter((x) => x === s).length > 0

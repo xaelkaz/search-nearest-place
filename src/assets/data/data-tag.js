@@ -18,29 +18,29 @@ import Tag from '../../components/tag/svg/tag'
  *]
  */
 export default [
-    {
-        title: 'Tags',
-        options: [
-            {
-                text: '1abc',
-                Addon: () => <Tag/>,
-            },
-            {
-                text: 'abcd',
-                Addon: () => <Tag/>,
-            },
-            {
-                text: 'bcde',
-                Addon: () => <Tag/>,
-            },
-            {
-                text: 'cdef',
-                Addon: () => <Tag/>,
-            },
-            {
-                text: 'defg',
-                Addon: () => <Tag/>,
-            },
-        ],
-    },
+  {
+    title: 'Tags',
+    options: [
+      {
+        text: '1abc',
+        Addon: () => <Tag />,
+      },
+      {
+        text: 'abcd',
+        Addon: () => <Tag />,
+      },
+      {
+        text: 'bcde',
+        Addon: () => <Tag />,
+      },
+      {
+        text: 'cdef',
+        Addon: () => <Tag />,
+      },
+      {
+        text: 'defg',
+        Addon: () => <Tag />,
+      },
+    ],
+  },
 ]
