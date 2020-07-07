@@ -36,7 +36,7 @@ import { Editor } from '../../components/comment/editor'
 
 const Marker = ({ children }) => children
 
-const GOOGLE_MAP_API = 'AIzaSyDjiGA46vxmp2s10njLkGXbtThJwM-A4TI'
+const GOOGLE_MAP_API = process.env.REACT_GOOGLE_MAP_API
 
 const MapView = () => {
   const {
