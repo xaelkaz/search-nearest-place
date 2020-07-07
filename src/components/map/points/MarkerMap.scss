@@ -11,6 +11,7 @@ $grayDarker: #534943;
 $grayTextDescription: #bdbab8;
 $black: #2d2d2d;
 $blue: #42A5F5;
+$purple: #C2185B;
 
 $K_SIZE: 40px;
 $I_SIZE: 20px;
@@ -66,7 +67,7 @@ $X_SIZE: 60px;
   display: grid;
   place-content: center;
   border-radius: $K_SIZE;
-  background-color: rgba($color: lighten($color: $red, $amount: 10), $alpha: 0.5);
+  background-color: rgba($color: lighten($color: $purple, $amount: 10), $alpha: 0.5);
   text-align: center;
   color: #3f51b5;
   font-size: 16px;
@@ -78,7 +79,7 @@ $X_SIZE: 60px;
     width: $I_SIZE;
     height: $I_SIZE;
     border-radius: $I_SIZE;
-    background-color: rgba($color: darken($color: $red, $amount: 5), $alpha: 0.8);
+    background-color: rgba($color: darken($color: $purple, $amount: 5), $alpha: 0.8);
     display: block;
     transform-origin: center center;
     transition: transform 0.3s ease;
@@ -91,7 +92,7 @@ $X_SIZE: 60px;
   & > .marker-indicator {
     transition: transform 0.2s ease;
     transform: scale(1.5) !important;
-    background-color: $red;
+    background-color: $purple;
   }
 }
 
