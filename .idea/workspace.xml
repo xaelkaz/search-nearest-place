@@ -3,9 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="a3b6be70-0221-40e7-9bc1-6f6ba6f0e147" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/input/like-button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/input/like-button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/map/points/single/MapPoint.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/single/MapPoint.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/tag/svg/tag.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tag/svg/tag.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/map/MapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/MapView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/map/styleContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/styleContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/tag/TagView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/tag/TagView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/mapProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/mapProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/serviceWorker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/firestore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/firestore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/ToCamelCaseString.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ToCamelCaseString.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +97,7 @@
       <workItem from="1586820372676" duration="18141000" />
       <workItem from="1587388852037" duration="3867000" />
       <workItem from="1587393146481" duration="23563000" />
+      <workItem from="1594120396204" duration="3226000" />
     </task>
     <servers />
   </component>
@@ -105,10 +115,11 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="454" y="250" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586798458969">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="2045" y="300" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594122590711">
+      <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state x="454" y="250" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586798458969" />
+    <state x="2045" y="300" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1594122590711" />
     <state x="454" y="250" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1586456251154" />
     <state x="2088" y="294" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1587392738673">
       <screen x="1440" y="23" width="1920" height="1057" />
@@ -119,11 +130,28 @@
     </state>
     <state x="524" y="240" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1586455458853" />
     <state x="2138" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587389496799" />
-    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1586826939863">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="1573" y="120" width="1654" height="840" key="DiffContextDialog" timestamp="1594121925631">
+      <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586826939863" />
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1586374215129" />
+    <state x="1573" y="120" width="1654" height="840" key="DiffContextDialog/0.23.1440.797/1440.0.1920.1080@1440.0.1920.1080" timestamp="1594121925631" />
+    <state width="1899" height="300" key="GridCell.Tab.0.bottom" timestamp="1594088870119">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1899" height="300" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1594088870119" />
+    <state width="1899" height="300" key="GridCell.Tab.0.center" timestamp="1594088870118">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1899" height="300" key="GridCell.Tab.0.center/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1594088870118" />
+    <state width="1899" height="300" key="GridCell.Tab.0.left" timestamp="1594088870117">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1899" height="300" key="GridCell.Tab.0.left/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1594088870117" />
+    <state width="1899" height="300" key="GridCell.Tab.0.right" timestamp="1594088870119">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1899" height="300" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1594088870119" />
     <state x="352" y="142" key="SettingsEditor" timestamp="1586800749761">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -166,21 +194,23 @@
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="2065" y="256" key="run.anything.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587406075280" />
-    <state x="2065" y="240" width="894" height="692" key="search.everywhere.popup" timestamp="1594074939725">
-      <screen x="1440" y="0" width="1920" height="1080" />
+    <state x="2065" y="258" width="894" height="678" key="search.everywhere.popup" timestamp="1594123447879">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586828565857" />
+    <state x="2065" y="240" width="894" height="692" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1594122564174" />
     <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1586836971558" />
+    <state x="2065" y="258" width="894" height="678" key="search.everywhere.popup/0.23.1440.797/1440.23.1920.1057@1440.23.1920.1057" timestamp="1594123447879" />
     <state x="2065" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587436344983" />
     <state x="469" y="203" width="670" height="519" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1587441260620" />
-    <state x="2065" y="240" width="894" height="692" key="search.everywhere.popup/0.23.1440.877/1440.0.1920.1080@1440.0.1920.1080" timestamp="1594074939725" />
+    <state x="2065" y="240" width="894" height="692" key="search.everywhere.popup/0.23.1440.877/1440.0.1920.1080@1440.0.1920.1080" timestamp="1594122353561" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/map/MapView.js</url>
-          <line>373</line>
+          <line>408</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -189,7 +219,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/map/MapView.js</url>
-          <line>272</line>
+          <line>299</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>

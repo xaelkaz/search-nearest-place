@@ -1,13 +1,18 @@
 import GoogleMapReact from 'google-map-react'
 import React, { useContext, useState } from 'react'
-import { store } from '../../hooks/mapProvider'
-import MarkerMap from '../../components/map/points/single/MarkerMap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faTimesCircle,
   faCreditCard,
   faGlobe,
 } from '@fortawesome/free-solid-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
+import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons/faAngleDoubleLeft'
+import moment from 'moment'
+import { Comment } from 'antd'
+import _ from 'lodash'
+import { store } from '../../hooks/mapProvider'
+import MarkerMap from '../../components/map/points/single/MarkerMap'
 import {
   CollapseBtn,
   CollapseSideBarContent,
@@ -24,15 +29,10 @@ import {
   LogLink,
   SidebarLogin,
 } from './styleContainer'
-import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
-import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons/faAngleDoubleLeft'
 import SidebarMenu from '../tag/TagView'
 import { ActiveFilter, ListTag } from '../../components/tag/list-tag-active'
-import moment from 'moment'
 import { CommentList } from '../../components/comment/commentList'
-import { Comment } from 'antd'
 import { Editor } from '../../components/comment/editor'
-import _ from 'lodash'
 
 const Marker = ({ children }) => children
 
@@ -106,7 +106,7 @@ const MapView = () => {
     bindResizeListener(map, maps, bounds)
   }
 
-  //const clientData = filterResult.length > 0 ? filterResult : result;
+  // const clientData = filterResult.length > 0 ? filterResult : result;
 
   if (filterResult.length === 0 && !mapApiLoaded) {
     return (
@@ -133,7 +133,7 @@ const MapView = () => {
         <FontAwesomeIcon
           icon={faCreditCard}
           style={{ marginRight: 5 }}
-          color={'#C2185B'}
+          color="#C2185B"
           size="lg"
         />
       )
@@ -142,7 +142,7 @@ const MapView = () => {
       <FontAwesomeIcon
         icon={faGlobe}
         style={{ marginRight: 5 }}
-        color={'#4CAF50'}
+        color="#4CAF50"
         size="lg"
       />
     )
@@ -308,10 +308,10 @@ const MapView = () => {
             variants={LabelVariants}
           >
             <ActiveFilter>
-              {filterByTag.length > 0 && <span>Filtros Activos: {''}</span>}
-              {_.uniqBy(filterByTag, 'activity_name').map((tag) => {
-                return <ListTag key={tag.id}>{tag.activity_name}</ListTag>
-              })}
+              {filterByTag.length > 0 && <span>Filtros Activos: </span>}
+              {_.uniqBy(filterByTag, 'activity_name').map((tag) => (
+                <ListTag key={tag.id}>{tag.activity_name}</ListTag>
+              ))}
             </ActiveFilter>
             <SidebarMenu data={result} selection="Gmail Subscribers" />
           </CollapseSideBarContent>
@@ -348,9 +348,8 @@ const MapView = () => {
                 >
                   {renderIcon(area.motive_text)}
                   <span style={{ fontWeight: 700 }}>
-                    {area.client_db_ref}
                   </span>{' '}
-                  - {area.client_name}
+                  {area.client_name}
                 </MenuLabel>
                 {filterResult.length === 1 && (
                   <div>

@@ -9,7 +9,7 @@ class LikeButton extends Component {
     }
   }
 
-  _likedButton = async () => {
+  likedButton = async () => {
     this.setState({
       loading: true,
       liked: !this.state.liked,
@@ -27,7 +27,7 @@ class LikeButton extends Component {
     return (
       <div>
         <p>Like button animation on HTTP request</p>
-        <button onClick={this._likedButton} disabled={loading}>
+        <button onClick={this.likedButton} disabled={loading}>
           <ion-icon name={liked ? 'heart' : 'heart-empty'} />
         </button>
       </div>

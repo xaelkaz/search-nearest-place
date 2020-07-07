@@ -14,7 +14,7 @@ function convertToString(input) {
 function toWords(input) {
   input = convertToString(input)
 
-  var regex = /[A-Z\xC0-\xD6\xD8-\xDE]?[a-z\xDF-\xF6\xF8-\xFF]+|[A-Z\xC0-\xD6\xD8-\xDE]+(?![a-z\xDF-\xF6\xF8-\xFF])|\d+/g
+  const regex = /[A-Z\xC0-\xD6\xD8-\xDE]?[a-z\xDF-\xF6\xF8-\xFF]+|[A-Z\xC0-\xD6\xD8-\xDE]+(?![a-z\xDF-\xF6\xF8-\xFF])|\d+/g
 
   return input.match(regex)
 }
@@ -24,7 +24,7 @@ function toCamelCase(inputArray) {
   let result = ''
 
   for (let i = 0, len = inputArray.length; i < len; i++) {
-    let currentStr = inputArray[i]
+    const currentStr = inputArray[i]
 
     let tempStr = currentStr.toLowerCase()
 
@@ -42,7 +42,7 @@ function toCamelCase(inputArray) {
 // this function call all other functions
 
 export function toCamelCaseString(input) {
-  let words = toWords(input)
+  const words = toWords(input)
 
   return toCamelCase(words)
 }

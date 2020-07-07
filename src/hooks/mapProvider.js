@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react'
-import clientJsonData from '../assets/data/client'
 import _ from 'lodash'
 import useSupercluster from 'use-supercluster'
+import clientJsonData from '../assets/data/client.json'
 
 const initialState = {}
 const store = createContext(initialState)
@@ -31,9 +31,7 @@ const MapProvider = (props) => {
 
   const [selected, setSelected] = useState([])
 
-  const isSelected = (name) => {
-    return selected.indexOf(name) !== -1
-  }
+  const isSelected = (name) => selected.indexOf(name) !== -1
 
   const apiHasLoaded = (map, maps) => {
     setMapInstance(map)
@@ -41,7 +39,7 @@ const MapProvider = (props) => {
     setMapApiLoaded(true)
   }
 
-  const clientData = filterResult.length > 0 ? filterResult : result
+  // const clientData = filterResult.length > 0 ? filterResult : result
 
   const points = filterResult.map((point) => ({
     type: 'Feature',
@@ -72,10 +70,10 @@ const MapProvider = (props) => {
   }
 
   useEffect(() => {
-    fetchData(clientJsonData).then((result) => {
-      const filterNullJson = result.details.filter((det) => {
-        return det.latitude !== null || det.longitude !== null
-      })
+    fetchData(clientJsonData).then((rs) => {
+      const filterNullJson = rs.details.filter(
+        (det) => det.latitude !== null || det.longitude !== null,
+      )
       const filterUniqueValue = _.uniqBy(filterNullJson, 'client_db_ref')
 
       const reduceLatitude = _.reduce(

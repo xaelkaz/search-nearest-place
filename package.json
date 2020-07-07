@@ -36,9 +36,6 @@
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --write \"{,!(node_modules)/**/}*.js\""
   },
-  "eslintConfig": {
-    "extends": "@imaginary-cloud/react"
-  },
   "prettier": "@imaginary-cloud/prettier-config",
   "browserslist": {
     "production": [
@@ -55,7 +52,6 @@
   "devDependencies": {
     "@imaginary-cloud/eslint-config-react": "1.0.1",
     "@imaginary-cloud/prettier-config": "^1.0.0",
-    "eslint": "^7.4.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-import": "^2.20.2",

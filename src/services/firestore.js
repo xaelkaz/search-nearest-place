@@ -11,58 +11,47 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig)
 const db = firebase.firestore()
 
-export const authenticateAnonymously = () => {
-  return firebase.auth().signInAnonymously()
-}
+export const authenticateAnonymously = () => firebase.auth().signInAnonymously()
 
-export const createGroceryList = (userName, userId) => {
-  return db.collection('groceryLists').add({
+export const createGroceryList = (userName, userId) =>
+  db.collection('groceryLists').add({
     created: firebase.firestore.FieldValue.serverTimestamp(),
     createdBy: userId,
     users: [
       {
-        userId: userId,
+        userId,
         name: userName,
       },
     ],
   })
-}
 
-export const getGroceryList = (groceryListId) => {
-  return db.collection('groceryLists').doc(groceryListId).get()
-}
+export const getGroceryList = (groceryListId) =>
+  db.collection('groceryLists').doc(groceryListId).get()
 
-export const getGroceryListItems = (groceryListId) => {
-  return db
-    .collection('groceryLists')
-    .doc(groceryListId)
-    .collection('items')
-    .get()
-}
+export const getGroceryListItems = (groceryListId) =>
+  db.collection('groceryLists').doc(groceryListId).collection('items').get()
 
-export const streamGroceryListItems = (groceryListId, observer) => {
-  return db
+export const streamGroceryListItems = (groceryListId, observer) =>
+  db
     .collection('groceryLists')
     .doc(groceryListId)
     .collection('items')
     .orderBy('created')
     .onSnapshot(observer)
-}
 
-export const addUserToGroceryList = (userName, groceryListId, userId) => {
-  return db
+export const addUserToGroceryList = (userName, groceryListId, userId) =>
+  db
     .collection('groceryLists')
     .doc(groceryListId)
     .update({
       users: firebase.firestore.FieldValue.arrayUnion({
-        userId: userId,
+        userId,
         name: userName,
       }),
     })
-}
 
-export const addGroceryListItem = (item, groceryListId, userId) => {
-  return getGroceryListItems(groceryListId)
+export const addGroceryListItem = (item, groceryListId, userId) =>
+  getGroceryListItems(groceryListId)
     .then((querySnapshot) => querySnapshot.docs)
     .then((groceryListItems) =>
       groceryListItems.find(
@@ -84,4 +73,3 @@ export const addGroceryListItem = (item, groceryListId, userId) => {
       }
       throw new Error('duplicate-item-error')
     })
-}

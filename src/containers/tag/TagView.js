@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Aside from '../../components/tag/aside-tag'
 import _ from 'lodash'
+import Aside from '../../components/tag/aside-tag'
 
 const SidebarMenu = ({ data, selection }) => {
   const [expanded, setExpanded] = useState(false)
