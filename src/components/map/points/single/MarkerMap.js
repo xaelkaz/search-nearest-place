@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import "../MarkerMap.scss";
 import { store } from "../../../../hooks/mapProvider";
 
-export default function MarkerMapSale(props) {
+export default function MarkerMap(props) {
     const {
         onChildClick
     } = useContext(store);
@@ -69,26 +69,24 @@ const markerVariants = {
     }
 };
 
-export function MarkerInfoSale({ client_name, client_db_ref }) {
+export function MarkerInfoSale({ client_name, client_db_ref, direction }) {
     return (
         <motion.div variants={ markerVariants } initial="hidden" animate="visible" exit="exit"
                     className="sale-marker-info-wrapper">
-            <motion.div className="place-marker-redirect-link"> VENTA</motion.div>
-            <motion.div className="sale-marker-title"> { client_name } - { client_db_ref }
+            <motion.div className="place-marker-redirect-link"> { client_name }</motion.div>
+            <motion.div className="sale-marker-title"> { direction }
             </motion.div>
         </motion.div>
     );
 }
 
-export function MarkerInfoNoSale({ client_name, client_db_ref, motive }) {
+export function MarkerInfoNoSale({ client_name, client_db_ref, direction }) {
 
     return (
         <motion.div variants={ markerVariants } initial="hidden" animate="visible" exit="exit"
                     className="sale-marker-info-wrapper">
-            <motion.div className="place-marker-redirect-link"> NO VENTA</motion.div>
-            <motion.div className="sale-marker-title">{ client_name } - { client_db_ref }
-            </motion.div>
-            <motion.div className="sale-marker-title">MOTIVO: { motive }
+          <motion.div className="place-marker-redirect-link"> { client_name }</motion.div>
+            <motion.div className="sale-marker-title">{direction}
             </motion.div>
         </motion.div>
     );

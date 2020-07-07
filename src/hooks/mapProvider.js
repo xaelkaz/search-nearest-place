@@ -52,7 +52,9 @@ const MapProvider = (props) => {
                 "category": point.activity_name,
                 "client_name": point.client_name,
                 "client_db_ref": point.client_db_ref,
-                "motive": point.motive_text
+                "motive": point.motive_text,
+                "direction": point.direction
+
             },
             geometry: {
                 type: "Point",
