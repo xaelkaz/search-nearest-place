@@ -8,7 +8,9 @@ It is a project to be able to filter the locations in a simpler way, you can obt
 
 ## Setup
 
-Make sure you have a [Node 12+](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/) set up on your machine.
+```
+Create .env - REACT_GOOGLE_MAP_API
+```
 
 Finally, install the project dependencies:
 

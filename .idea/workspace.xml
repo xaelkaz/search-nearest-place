@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3b6be70-0221-40e7-9bc1-6f6ba6f0e147" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/input/like-button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/input/like-button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/map/points/single/MapPoint.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/points/single/MapPoint.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/tag/svg/tag.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tag/svg/tag.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/map/MapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/MapView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/map/styleContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/map/styleContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/tag/TagView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/tag/TagView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/mapProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/mapProvider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/serviceWorker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/firestore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/firestore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/ToCamelCaseString.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ToCamelCaseString.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,12 +167,13 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="0" y="0" width="1440" height="900" maximized="true" key="dock-window-1/0.0.1440.900@0.0.1440.900" timestamp="1586392411741" />
-    <state x="1931" y="229" width="938" height="623" key="find.popup" timestamp="1594076569925">
-      <screen x="1440" y="0" width="1920" height="1080" />
+    <state x="1931" y="247" width="938" height="610" key="find.popup" timestamp="1594125376193">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586378798209" />
     <state x="1931" y="229" width="938" height="623" key="find.popup/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1594076569925" />
     <state x="368" y="191" width="703" height="518" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1586455181143" />
+    <state x="1931" y="247" width="938" height="610" key="find.popup/0.23.1440.797/1440.23.1920.1057@1440.23.1920.1057" timestamp="1594125376193" />
     <state x="1931" y="247" width="938" height="609" key="find.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587432358251" />
     <state width="600" height="440" key="javadoc.popup" timestamp="1587390719301">
       <screen x="1440" y="23" width="1920" height="1057" />
@@ -194,13 +183,13 @@
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="2065" y="256" key="run.anything.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587406075280" />
-    <state x="2065" y="258" width="894" height="678" key="search.everywhere.popup" timestamp="1594123447879">
+    <state x="2065" y="258" width="894" height="678" key="search.everywhere.popup" timestamp="1594125611077">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1586828565857" />
     <state x="2065" y="240" width="894" height="692" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1594122564174" />
     <state x="469" y="200" width="670" height="576" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1586836971558" />
-    <state x="2065" y="258" width="894" height="678" key="search.everywhere.popup/0.23.1440.797/1440.23.1920.1057@1440.23.1920.1057" timestamp="1594123447879" />
+    <state x="2065" y="258" width="894" height="678" key="search.everywhere.popup/0.23.1440.797/1440.23.1920.1057@1440.23.1920.1057" timestamp="1594125611077" />
     <state x="2065" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1440.811/1440.23.1920.1057@1440.23.1920.1057" timestamp="1587436344983" />
     <state x="469" y="203" width="670" height="519" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1587441260620" />
     <state x="2065" y="240" width="894" height="692" key="search.everywhere.popup/0.23.1440.877/1440.0.1920.1080@1440.0.1920.1080" timestamp="1594122353561" />
